@@ -147,7 +147,7 @@ namespace ChamThiSolution.ClientApp.Forms
             this.Controls.Add(this.btnCancel);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Đăng Nhập Hệ Thống";
+            this.Text = "NHẬP MÔN LẬP TRÌNH";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

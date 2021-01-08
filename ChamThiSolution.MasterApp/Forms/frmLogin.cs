@@ -132,31 +132,32 @@ namespace ChamThiSolution.MasterApp.Forms
             {
                 if (_bus.CheckQuyenMaster(txtTK.Text))
                 {
+                    Hide();
+                    frmMain frm = new frmMain();
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+
+                    }
+                    if (ckcNhoPass.Checked)
+                    {
+                        Properties.Settings.Default.UserName = txtTK.Text;
+                        Properties.Settings.Default.Password = txtMK.Text;
+                        Properties.Settings.Default.Save();
+
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.UserName = "";
+                        Properties.Settings.Default.Password = "";
+                        Properties.Settings.Default.Save();
+                    }
                 }
                 else
                 {
                     XtraMessageBox.Show("Bạn không được phép đăng nhập với tài khoản này", "Đăng nhập thất bại");
                     return;
                 }
-                Hide();
-                frmMain frm = new frmMain();
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-
-                }
-                if (ckcNhoPass.Checked)
-                {
-                    Properties.Settings.Default.UserName = txtTK.Text;
-                    Properties.Settings.Default.Password = txtMK.Text;
-                    Properties.Settings.Default.Save();
-
-                }
-                else
-                {
-                    Properties.Settings.Default.UserName = "";
-                    Properties.Settings.Default.Password = "";
-                    Properties.Settings.Default.Save();
-                }
+                
             }
             else
             {

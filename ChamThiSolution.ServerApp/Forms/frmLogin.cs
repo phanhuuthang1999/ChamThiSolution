@@ -1,5 +1,6 @@
 ﻿using ChamThiSolution.Bussiness.Bll;
 using ChamThiSolution.Data.Entities;
+using ChamThiSolution.Server.Forms;
 using DevExpress.XtraEditors;
 using System;
 using System.Windows.Forms;
@@ -125,31 +126,33 @@ namespace ChamThiSolution.ServerApp.Forms
             {
                 if (_bus.CheckQuyenServer(txtTK.Text))
                 {
+                    Hide();
+
+                    frmMain frm = new frmMain("");
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+
+                    }
+                    if (ckcNhoPass.Checked)
+                    {
+                        Properties.Settings.Default.UserName = txtTK.Text;
+                        Properties.Settings.Default.Password = txtMK.Text;
+                        Properties.Settings.Default.Save();
+
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.UserName = "";
+                        Properties.Settings.Default.Password = "";
+                        Properties.Settings.Default.Save();
+                    }
                 }
                 else
                 {
                     XtraMessageBox.Show("Bạn không được phép đăng nhập với tài khoản này", "Đăng nhập thất bại");
                     return;
                 }
-                Hide();
-                frmMain frm = new frmMain();
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-
-                }
-                if (ckcNhoPass.Checked)
-                {
-                    Properties.Settings.Default.UserName = txtTK.Text;
-                    Properties.Settings.Default.Password = txtMK.Text;
-                    Properties.Settings.Default.Save();
-
-                }
-                else
-                {
-                    Properties.Settings.Default.UserName = "";
-                    Properties.Settings.Default.Password = "";
-                    Properties.Settings.Default.Save();
-                }
+               
             }
             else
             {

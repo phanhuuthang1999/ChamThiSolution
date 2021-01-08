@@ -52,11 +52,11 @@ namespace ChamThiSolution.ProxyObject.Interfaces
         bool CheckIsQuyen(string taikhoan);
         bool GetLogin(string taikhoan, string matkhau);
 
-        int GetIdThiSinh(string tk);
+        //int GetIdThiSinh(string tk);
 
       //  ThiSinhDTO GetTaiKhoanTS(int tk);
 
-        List<PhongThi> GetPhongThi();
+       // List<PhongThi> GetPhongThi();
 
         bool EnableRoom();
 

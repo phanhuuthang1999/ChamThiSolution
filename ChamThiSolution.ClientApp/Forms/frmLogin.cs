@@ -74,13 +74,16 @@ namespace ChamThiSolution.ClientApp.Forms
             catch (Exception ex)
             {
                 MessageBox.Show(ex + "", "Error");
+                return;
             }
 
             if (checkDangNhap(txtTK.Text, txtMK.Text))
             {
                 if (primeProxy.CheckIsQuyen(txtTK.Text))
                 {
-
+                    Hide();
+                    frmMain frm = new frmMain();
+                    frm.Show();
                 }
 
                 else
@@ -88,9 +91,7 @@ namespace ChamThiSolution.ClientApp.Forms
                     XtraMessageBox.Show("Bạn không được phép đăng nhập với tài khoản này", "Đăng nhập thất bại");
                     return;
                 }
-                Hide();
-                frmMain frm = new frmMain();
-                frm.Show();
+
             }
             else
             {
