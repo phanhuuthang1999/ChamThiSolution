@@ -88,6 +88,24 @@
     <Compile Include="Forms\frmPhongThi.designer.cs">
       <DependentUpon>frmPhongThi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmThemCauHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmThemCauHoi.Designer.cs">
+      <DependentUpon>frmThemCauHoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmThemGiamThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmThemGiamThi.Designer.cs">
+      <DependentUpon>frmThemGiamThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmThemPhongThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmThemPhongThi.Designer.cs">
+      <DependentUpon>frmThemPhongThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmThemTaiKhoanExcel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,8 +142,17 @@
     <Compile Include="Forms\frmThiSinh.Designer.cs">
       <DependentUpon>frmThiSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmCauHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCauHoi.Designer.cs">
+      <DependentUpon>frmCauHoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmCauHoi.resx">
+      <DependentUpon>frmCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmGiamThi.resx">
       <DependentUpon>frmGiamThi.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +170,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTaiKhoan.resx">
       <DependentUpon>frmTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmThemCauHoi.resx">
+      <DependentUpon>frmThemCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmThemGiamThi.resx">
+      <DependentUpon>frmThemGiamThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmThemPhongThi.resx">
+      <DependentUpon>frmThemPhongThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmThemTaiKhoanExcel.resx">
       <DependentUpon>frmThemTaiKhoanExcel.cs</DependentUpon>

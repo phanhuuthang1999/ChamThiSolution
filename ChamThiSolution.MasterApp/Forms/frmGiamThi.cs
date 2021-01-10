@@ -1,69 +1,67 @@
-﻿using DevExpress.XtraBars;
-using DevExpress.XtraEditors;
+﻿using ChamThiSolution.Bussiness.MasterBll;
+using DevExpress.XtraBars;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ChamThiSolution.MasterApp.Forms
 {
     public partial class frmGiamThi : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        #region Variable
+
+        private GiamThiBll _bus;
+
+        #endregion
         public frmGiamThi()
         {
             InitializeComponent();
-
-            BindingList<Customer> dataSource = GetDataSource();
-            gridControl.DataSource = dataSource;
-            bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
+            _bus = new GiamThiBll();
+            bbiNew.ItemClick += BbiNew_ItemClick;
+            bbiEdit.ItemClick += BbiEdit_ItemClick;
+            bbiDelete.ItemClick += BbiDelete_ItemClick;
+            bbiRefresh.ItemClick += BbiRefresh_ItemClick;
         }
+
+        private void BbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            LoadData();
+        }
+
+        private void BbiDelete_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void BbiEdit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void BbiNew_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmThemGiamThi frm = new frmThemGiamThi();
+            if (frm.ShowDialog() == DialogResult.Yes)
+            {
+                LoadData();
+            }
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            gridControl.DataSource = _bus.GetAllGiamThi(null);
+        }
+
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
         {
             gridControl.ShowRibbonPrintPreview();
-        }
-        public BindingList<Customer> GetDataSource()
-        {
-            BindingList<Customer> result = new BindingList<Customer>();
-            result.Add(new Customer()
-            {
-                ID = 1,
-                Name = "ACME",
-                Address = "2525 E El Segundo Blvd",
-                City = "El Segundo",
-                State = "CA",
-                ZipCode = "90245",
-                Phone = "(310) 536-0611"
-            });
-            result.Add(new Customer()
-            {
-                ID = 2,
-                Name = "Electronics Depot",
-                Address = "2455 Paces Ferry Road NW",
-                City = "Atlanta",
-                State = "GA",
-                ZipCode = "30339",
-                Phone = "(800) 595-3232"
-            });
-            return result;
-        }
-        public class Customer
-        {
-            [Key, Display(AutoGenerateField = false)]
-            public int ID { get; set; }
-            [Required]
-            public string Name { get; set; }
-            public string Address { get; set; }
-            public string City { get; set; }
-            public string State { get; set; }
-            [Display(Name = "Zip Code")]
-            public string ZipCode { get; set; }
-            public string Phone { get; set; }
         }
     }
 }

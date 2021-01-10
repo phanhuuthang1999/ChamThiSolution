@@ -29,6 +29,7 @@ namespace ChamThiSolution.MasterApp.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.ckcMK = new DevExpress.XtraEditors.CheckEdit();
             this.txtMK = new DevExpress.XtraEditors.TextEdit();
@@ -145,6 +146,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmLogin.IconOptions.Image")));
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập Hệ Thống";

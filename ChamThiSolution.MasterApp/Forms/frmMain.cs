@@ -16,6 +16,9 @@ namespace ChamThiSolution.MasterApp.Forms
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        #region Variable
+
+        #endregion
 
         #region Constructor
 
@@ -28,8 +31,8 @@ namespace ChamThiSolution.MasterApp.Forms
             btnThiSinh.ItemClick += BtnThiSinh_ItemClick;
             btnTaiKhoan.ItemClick += BtnTaiKhoan_ItemClick;
             btnPhanQuyen.ItemClick += BtnPhanQuyen_ItemClick;
+            btnNhapMon.ItemClick += BtnNhapMon_ItemClick;
         }
-
 
         #endregion
 
@@ -126,6 +129,21 @@ namespace ChamThiSolution.MasterApp.Forms
             {
                 SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
                 frmThiSinh frm = new frmThiSinh();
+                frm.MdiParent = this;
+                frm.Show();
+                SplashScreenManager.CloseForm(false);
+            }
+            else
+                f.Activate();
+        }
+
+        private void BtnNhapMon_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = isActive(typeof(frmCauHoi));
+            if (f == null)
+            {
+                SplashScreenManager.ShowForm(this, typeof(WaitForm1), true, true, false);
+                frmCauHoi frm = new frmCauHoi();
                 frm.MdiParent = this;
                 frm.Show();
                 SplashScreenManager.CloseForm(false);

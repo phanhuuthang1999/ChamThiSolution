@@ -5,22 +5,48 @@ using System.Windows.Forms;
 
 namespace ChamThiSolution.MasterApp.Forms
 {
-    public partial class frmThiSinh : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmCauHoi : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         #region Variable
 
-        private ThiSinhBll _bus;
+        private CauHoiBll _bus;
 
         #endregion
-        public frmThiSinh()
+
+        #region Constructor
+
+        public frmCauHoi()
         {
             InitializeComponent();
-            _bus = new ThiSinhBll();
+            _bus = new CauHoiBll();
             bbiNew.ItemClick += BbiNew_ItemClick;
             bbiEdit.ItemClick += BbiEdit_ItemClick;
             bbiDelete.ItemClick += BbiDelete_ItemClick;
             bbiRefresh.ItemClick += BbiRefresh_ItemClick;
         }
+
+        #endregion
+
+        #region Protected
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            LoadData();
+        }
+
+        #endregion
+
+        #region Private
+
+        private void LoadData()
+        {
+            gridControl.DataSource = _bus.GetAllQuestion(null);
+        }
+
+        #endregion
+
+        #region Events
 
         private void BbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -39,27 +65,18 @@ namespace ChamThiSolution.MasterApp.Forms
 
         private void BbiNew_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmThemGiamThi frm = new frmThemGiamThi();
+            frmThemCauHoi frm = new frmThemCauHoi();
             if (frm.ShowDialog() == DialogResult.Yes)
             {
                 LoadData();
             }
         }
 
-        protected override void OnShown(EventArgs e)
-        {
-            base.OnShown(e);
-            LoadData();
-        }
-
-        private void LoadData()
-        {
-            gridControl.DataSource = _bus.GetAllThiSinh(null);
-        }
-
-        void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
+        private void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
         {
             gridControl.ShowRibbonPrintPreview();
         }
+
+        #endregion
     }
 }

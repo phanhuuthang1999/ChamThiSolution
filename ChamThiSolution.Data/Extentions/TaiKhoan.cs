@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using LinqToExcel.Attributes;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ChamThiSolution.Data.Entities
 {
@@ -12,5 +13,16 @@ namespace ChamThiSolution.Data.Entities
                 return IsQuyen == -1 ? "Sinh Viên" : IsQuyen == 0 ? "Giám Thị" : "Server";
             }
         }
+
+    }
+
+    public class ExcelFile
+    {
+        [ExcelColumn("Tên đăng nhập")]
+        public string TenDangNhap { get; set; }
+
+        [ExcelColumn("Mật khẩu")]
+        public string MatKhau { get; set; }
+
     }
 }

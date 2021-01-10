@@ -31,6 +31,11 @@ namespace ChamThiSolution.MasterApp.Forms
         {
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MaGiamThi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HoDem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenGiamThi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GioiTinh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HinhAnh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
@@ -54,7 +59,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.gridControl.MainView = this.gridView;
             this.gridControl.MenuManager = this.ribbonControl;
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(1117, 467);
+            this.gridControl.Size = new System.Drawing.Size(1181, 519);
             this.gridControl.TabIndex = 2;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -62,23 +67,69 @@ namespace ChamThiSolution.MasterApp.Forms
             // gridView
             // 
             this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MaGiamThi,
+            this.HoDem,
+            this.TenGiamThi,
+            this.GioiTinh,
+            this.HinhAnh});
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;
             this.gridView.OptionsBehavior.ReadOnly = true;
+            // 
+            // MaGiamThi
+            // 
+            this.MaGiamThi.Caption = "Mã giám thị";
+            this.MaGiamThi.FieldName = "MaGiamThi";
+            this.MaGiamThi.Name = "MaGiamThi";
+            this.MaGiamThi.Visible = true;
+            this.MaGiamThi.VisibleIndex = 0;
+            // 
+            // HoDem
+            // 
+            this.HoDem.Caption = "Họ đệm";
+            this.HoDem.FieldName = "HoDem";
+            this.HoDem.Name = "HoDem";
+            this.HoDem.Visible = true;
+            this.HoDem.VisibleIndex = 1;
+            // 
+            // TenGiamThi
+            // 
+            this.TenGiamThi.Caption = "Tên giám thị";
+            this.TenGiamThi.FieldName = "TenGiamThi";
+            this.TenGiamThi.Name = "TenGiamThi";
+            this.TenGiamThi.Visible = true;
+            this.TenGiamThi.VisibleIndex = 2;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.Caption = "Giới tính";
+            this.GioiTinh.FieldName = "GioiTinhText";
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.Visible = true;
+            this.GioiTinh.VisibleIndex = 3;
+            // 
+            // HinhAnh
+            // 
+            this.HinhAnh.Caption = "Hình ảnh";
+            this.HinhAnh.FieldName = "HinhAnh";
+            this.HinhAnh.Name = "HinhAnh";
+            this.HinhAnh.Visible = true;
+            this.HinhAnh.VisibleIndex = 4;
             // 
             // ribbonControl
             // 
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
+            this.ribbonControl.SearchEditItem,
             this.bbiPrintPreview,
             this.bsiRecordsCount,
             this.bbiNew,
             this.bbiEdit,
             this.bbiDelete,
-            this.bbiRefresh,
-            this.ribbonControl.SearchEditItem});
+            this.bbiRefresh});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.MaxItemId = 20;
             this.ribbonControl.Name = "ribbonControl";
@@ -86,7 +137,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPage1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1117, 158);
+            this.ribbonControl.Size = new System.Drawing.Size(1181, 158);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -163,16 +214,16 @@ namespace ChamThiSolution.MasterApp.Forms
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 601);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 653);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1117, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1181, 24);
             // 
             // frmGiamThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 625);
+            this.ClientSize = new System.Drawing.Size(1181, 677);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.gridControl);
             this.Controls.Add(this.ribbonControl);
@@ -203,5 +254,10 @@ namespace ChamThiSolution.MasterApp.Forms
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
+        private DevExpress.XtraGrid.Columns.GridColumn MaGiamThi;
+        private DevExpress.XtraGrid.Columns.GridColumn HoDem;
+        private DevExpress.XtraGrid.Columns.GridColumn TenGiamThi;
+        private DevExpress.XtraGrid.Columns.GridColumn GioiTinh;
+        private DevExpress.XtraGrid.Columns.GridColumn HinhAnh;
     }
 }

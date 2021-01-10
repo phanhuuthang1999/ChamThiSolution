@@ -10,7 +10,7 @@ namespace ChamThiSolution.MasterApp.Forms
 
         private PhongThiBll _bus;
         private TaiKhoanBll _bustk;
-        string ID;
+        string ID ;
 
         #endregion
 
@@ -28,13 +28,22 @@ namespace ChamThiSolution.MasterApp.Forms
             loadPhongThi();
         }
 
+        #region Private
+
+        private void loadPhongThi()
+        {
+            gridPhongThi.DataSource = _bus.GetAll();
+        } 
+
+        #endregion
+
         private void BtnNew_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //frmThemPhong frm = new frmThemPhong();
-            //if (frm.ShowDialog() == System.Windows.Forms.DialogResult.Yes)
-            //{
-            //    loadPhongThi();
-            //}
+            frmThemPhongThi frm = new frmThemPhongThi();
+            if (frm.ShowDialog() == System.Windows.Forms.DialogResult.Yes)
+            {
+                loadPhongThi();
+            }
         }
 
         private void GridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -46,12 +55,7 @@ namespace ChamThiSolution.MasterApp.Forms
         {
             gridTaiKhoan.DataSource = _bustk.getAllById(int.Parse(ID));
         }
-   
-        private void loadPhongThi()
-        {
-            gridPhongThi.DataSource = _bus.GetAll();
-        }
-
+  
         #endregion
 
         protected override void OnShown(EventArgs e)

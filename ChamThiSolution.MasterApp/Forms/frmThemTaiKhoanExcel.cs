@@ -4,6 +4,8 @@ using System;
 using System.Windows.Forms;
 using Application = Microsoft.Office.Interop.Excel.Application;
 using System.Data.OleDb;
+using ChamThiSolution.Data.Entities;
+using System.Collections.Generic;
 
 namespace ChamThiSolution.MasterApp.Forms
 {
@@ -18,9 +20,58 @@ namespace ChamThiSolution.MasterApp.Forms
         public frmThemTaiKhoanExcel()
         {
             InitializeComponent();
+
             btnLink.Click += BtnLink_Click;
             backgroundWorker1.DoWork += BackgroundWorker1_DoWork;
             backgroundWorker1.ProgressChanged += BackgroundWorker1_ProgressChanged;
+        }
+
+        #endregion
+
+        #region Private
+
+        private void ExportDataFromExcel(string link)
+        {
+            Application xlApp = new Application();
+            Workbook xlWorkbook = xlApp.Workbooks.Open(btnLink.Text);
+            _Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Range xlRange = xlWorksheet.UsedRange;
+
+            int rowCount = xlWorksheet.UsedRange.Rows.Count;
+            int colCount = 1;
+
+            for (int i = 1; i <= rowCount; i++)
+            {
+                for (int j = 1; j <= colCount; j++)
+                {
+                    ////new line
+                    //if (j == 1)
+                    //    Console.Write("\r\n");
+
+                    ////write the value to the console
+                    //if (xlRange.Cells[i, j] != null && xlRange.Cells[i, j].Value2 != null)
+                        //string s = xlRange.Cells[i, j].Value2.ToString() + "\t");
+
+                    //add useful things here!   
+                }
+}
+        }
+
+        #endregion
+
+        #region Events
+
+        private void BtnLink_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog choofdlog = new OpenFileDialog();
+            choofdlog.Filter = "All Files (*.*)|*.*";
+            choofdlog.FilterIndex = 1;
+            choofdlog.Multiselect = true;
+
+            if (choofdlog.ShowDialog() == DialogResult.OK)
+            {
+                btnLink.Text = choofdlog.FileName;
+            }
         }
 
         private void BackgroundWorker1_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
@@ -39,82 +90,12 @@ namespace ChamThiSolution.MasterApp.Forms
             //Insert here
         }
 
-        private void sdfdsfdsfsdnf()
-        {
-            //OleDbCommand ocCount = new OleDbCommand("SELECT COUNT(*) FROM [Sheet1$]", con);
-
-            //con.Open();
-            //int count = (int)ocCount.ExecuteScalar();
-
-            //progressBarControl1.MaximumSize = 100%;
-          
-        }
         #endregion
 
-        private void BtnLink_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog choofdlog = new OpenFileDialog();
-            choofdlog.Filter = "All Files (*.*)|*.*";
-            choofdlog.FilterIndex = 1;
-            choofdlog.Multiselect = true;
+        #region Public
 
-            if (choofdlog.ShowDialog() == DialogResult.OK)
-            {
-                btnLink.Text = choofdlog.FileName;
-               // string[] arrAllFiles = choofdlog.FileNames; //used when Multiselect = true           
-            }
-        }
+        public TaiKhoan TaiKhoan { get; set; }
 
-        private void ExportDataFromExcel(string link)
-        {
-            Application xlApp = new Application();
-            Workbook xlWorkbook = xlApp.Workbooks.Open(btnLink.Text);
-            _Worksheet xlWorksheet = xlWorkbook.Sheets[1];
-            Range xlRange = xlWorksheet.UsedRange;
-
-            int rowCount = xlWorksheet.UsedRange.Rows.Count;
-            int colCount = 2;
-
-            for (int i = 1; i <= rowCount; i++)
-            {
-                for (int j = 1; j <= colCount; j++)
-                {
-                    //new line
-                    if (j == 1)
-                        Console.Write("\r\n");
-
-                    //write the value to the console
-                    if (xlRange.Cells[i, j] != null && xlRange.Cells[i, j].Value2 != null)
-                        Console.Write(xlRange.Cells[i, j].Value2.ToString() + "\t");
-
-                    //add useful things here!   
-                }
-            }
-
-            //cleanup
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-
-            //rule of thumb for releasing com objects:
-            //  never use two dots, all COM objects must be referenced and released individually
-            //  ex: [somthing].[something].[something] is bad
-
-            //release com objects to fully kill excel process from running in the background
-            Marshal.ReleaseComObject(xlRange);
-            Marshal.ReleaseComObject(xlWorksheet);
-
-            //close and release
-            xlWorkbook.Close();
-            Marshal.ReleaseComObject(xlWorkbook);
-
-            //quit and release
-            xlApp.Quit();
-            Marshal.ReleaseComObject(xlApp);
-
-            Console.WriteLine();
-            Console.WriteLine("---Complete---");
-        }
-
-        
+        #endregion
     }
 }

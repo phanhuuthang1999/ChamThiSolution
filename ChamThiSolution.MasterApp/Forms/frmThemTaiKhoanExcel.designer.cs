@@ -91,7 +91,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.AcceptButton = this.btnImport;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 134);
+            this.ClientSize = new System.Drawing.Size(507, 150);
             this.Controls.Add(this.progressBarControl1);
             this.Controls.Add(this.btnLink);
             this.Controls.Add(this.labelControl1);

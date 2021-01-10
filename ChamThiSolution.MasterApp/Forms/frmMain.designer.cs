@@ -40,10 +40,19 @@ namespace ChamThiSolution.MasterApp.Forms
             this.btnPhanQuyen = new DevExpress.XtraBars.BarButtonItem();
             this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
             this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.Ca = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNhapMon = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonGroup1 = new DevExpress.XtraBars.BarButtonGroup();
+            this.btnCa1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCa2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLop01 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -57,20 +66,11 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.Ca = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnNhapMon = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonGroup1 = new DevExpress.XtraBars.BarButtonGroup();
-            this.btnCa1 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnCa2 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnLop01 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
@@ -157,6 +157,49 @@ namespace ChamThiSolution.MasterApp.Forms
             this.skinDropDownButtonItem1.Id = 11;
             this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
             // 
+            // Ca
+            // 
+            this.Ca.Caption = "barButtonItem1";
+            this.Ca.Id = 12;
+            this.Ca.Name = "Ca";
+            // 
+            // btnNhapMon
+            // 
+            this.btnNhapMon.Caption = "Nhập môn lập trình";
+            this.btnNhapMon.Id = 13;
+            this.btnNhapMon.Name = "btnNhapMon";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 16;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonGroup1
+            // 
+            this.barButtonGroup1.Caption = "barButtonGroup1";
+            this.barButtonGroup1.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.barButtonGroup1.Id = 17;
+            this.barButtonGroup1.Name = "barButtonGroup1";
+            // 
+            // btnCa1
+            // 
+            this.btnCa1.Caption = "Ca 1";
+            this.btnCa1.Id = 18;
+            this.btnCa1.Name = "btnCa1";
+            // 
+            // btnCa2
+            // 
+            this.btnCa2.Caption = "Ca 2";
+            this.btnCa2.Id = 19;
+            this.btnCa2.Name = "btnCa2";
+            // 
+            // btnLop01
+            // 
+            this.btnLop01.Caption = "Lớp 08DHTH2";
+            this.btnLop01.Id = 20;
+            this.btnLop01.Name = "btnLop01";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -165,11 +208,18 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Danh Mục";
             // 
+            // ribbonPageGroup13
+            // 
+            this.ribbonPageGroup13.ItemLinks.Add(this.btnGiamThi, true);
+            this.ribbonPageGroup13.ItemLinks.Add(this.btnPhongThi, true);
+            this.ribbonPageGroup13.ItemLinks.Add(this.btnThiSinh, true);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            this.ribbonPageGroup13.Text = "QUẢN LÝ";
+            // 
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnTaiKhoan, true);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnDangXuat, true);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnPhanQuyen, true);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "CHỨC NĂNG";
             // 
@@ -186,6 +236,11 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPageGroup3.ItemLinks.Add(this.btnNhapMon, true);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Nhập Môn Lập Trình";
+            // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "Toán Rời Rạc";
             // 
             // ribbonPage3
             // 
@@ -223,7 +278,7 @@ namespace ChamThiSolution.MasterApp.Forms
             // 
             // ribbonPageGroup6
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.skinDropDownButtonItem1);
+            this.ribbonPageGroup6.ItemLinks.Add(this.skinDropDownButtonItem1, true);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Giao Diện";
             // 
@@ -270,23 +325,6 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "QUẢN LÝ";
             // 
-            // Ca
-            // 
-            this.Ca.Caption = "barButtonItem1";
-            this.Ca.Id = 12;
-            this.Ca.Name = "Ca";
-            // 
-            // ribbonPageGroup10
-            // 
-            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
-            this.ribbonPageGroup10.Text = "Toán Rời Rạc";
-            // 
-            // btnNhapMon
-            // 
-            this.btnNhapMon.Caption = "Nhập môn lập trình";
-            this.btnNhapMon.Id = 13;
-            this.btnNhapMon.Name = "btnNhapMon";
-            // 
             // ribbonPageGroup11
             // 
             this.ribbonPageGroup11.ItemLinks.Add(this.btnGiamThi, true);
@@ -310,14 +348,6 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "QUẢN LÝ";
             // 
-            // ribbonPageGroup13
-            // 
-            this.ribbonPageGroup13.ItemLinks.Add(this.btnGiamThi, true);
-            this.ribbonPageGroup13.ItemLinks.Add(this.btnPhongThi, true);
-            this.ribbonPageGroup13.ItemLinks.Add(this.btnThiSinh, true);
-            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
-            this.ribbonPageGroup13.Text = "QUẢN LÝ";
-            // 
             // ribbonPageGroup14
             // 
             this.ribbonPageGroup14.ItemLinks.Add(this.btnGiamThi, true);
@@ -334,37 +364,6 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
             this.ribbonPageGroup15.Text = "QUẢN LÝ";
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 16;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barButtonGroup1
-            // 
-            this.barButtonGroup1.Caption = "barButtonGroup1";
-            this.barButtonGroup1.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.barButtonGroup1.Id = 17;
-            this.barButtonGroup1.Name = "barButtonGroup1";
-            // 
-            // btnCa1
-            // 
-            this.btnCa1.Caption = "Ca 1";
-            this.btnCa1.Id = 18;
-            this.btnCa1.Name = "btnCa1";
-            // 
-            // btnCa2
-            // 
-            this.btnCa2.Caption = "Ca 2";
-            this.btnCa2.Id = 19;
-            this.btnCa2.Name = "btnCa2";
-            // 
-            // btnLop01
-            // 
-            this.btnLop01.Caption = "Lớp 08DHTH2";
-            this.btnLop01.Id = 20;
-            this.btnLop01.Name = "btnLop01";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,6 +371,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ClientSize = new System.Drawing.Size(1143, 708);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmMain.IconOptions.Image")));
             this.IsMdiContainer = true;
             this.Name = "frmMain";
             this.Ribbon = this.ribbon;

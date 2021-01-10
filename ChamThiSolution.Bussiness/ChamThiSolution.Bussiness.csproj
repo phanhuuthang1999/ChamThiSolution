@@ -56,10 +56,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bll\BaseBll.cs" />
+    <Compile Include="Bll\ChamDiemBll.cs" />
     <Compile Include="Bll\PhongThiBll.cs" />
     <Compile Include="Bll\TaiKhoanBll.cs" />
+    <Compile Include="MasterBll\CauHoiBll.cs" />
+    <Compile Include="MasterBll\GiamThiBll.cs" />
     <Compile Include="MasterBll\PhongThiBll.cs" />
     <Compile Include="MasterBll\TaiKhoanBll.cs" />
+    <Compile Include="MasterBll\ThiSinhBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
