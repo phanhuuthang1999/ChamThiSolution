@@ -38,6 +38,8 @@ namespace ChamThiSolution.ClientApp.Forms
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnOK = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.cbb_maphongthi = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ckcMK.Properties)).BeginInit();
@@ -50,6 +52,8 @@ namespace ChamThiSolution.ClientApp.Forms
             // 
             this.groupControl1.Appearance.BackColor = System.Drawing.Color.White;
             this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.Controls.Add(this.labelControl3);
+            this.groupControl1.Controls.Add(this.cbb_maphongthi);
             this.groupControl1.Controls.Add(this.ckcMK);
             this.groupControl1.Controls.Add(this.txtMK);
             this.groupControl1.Controls.Add(this.labelControl2);
@@ -94,7 +98,7 @@ namespace ChamThiSolution.ClientApp.Forms
             // ckcNhoPass
             // 
             this.ckcNhoPass.EditValue = true;
-            this.ckcNhoPass.Location = new System.Drawing.Point(39, 131);
+            this.ckcNhoPass.Location = new System.Drawing.Point(36, 156);
             this.ckcNhoPass.Margin = new System.Windows.Forms.Padding(2);
             this.ckcNhoPass.Name = "ckcNhoPass";
             this.ckcNhoPass.Properties.Caption = "Ghi nhớ";
@@ -136,6 +140,23 @@ namespace ChamThiSolution.ClientApp.Forms
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(39, 125);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(47, 13);
+            this.labelControl3.TabIndex = 9;
+            this.labelControl3.Text = "Phòng Thi";
+            // 
+            // cbb_maphongthi
+            // 
+            this.cbb_maphongthi.FormattingEnabled = true;
+            this.cbb_maphongthi.Location = new System.Drawing.Point(139, 122);
+            this.cbb_maphongthi.Name = "cbb_maphongthi";
+            this.cbb_maphongthi.Size = new System.Drawing.Size(139, 21);
+            this.cbb_maphongthi.TabIndex = 8;
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnOK;
@@ -170,5 +191,7 @@ namespace ChamThiSolution.ClientApp.Forms
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btnOK;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private System.Windows.Forms.ComboBox cbb_maphongthi;
     }
 }

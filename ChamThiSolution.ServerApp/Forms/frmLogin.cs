@@ -14,6 +14,7 @@ namespace ChamThiSolution.ServerApp.Forms
         private TaiKhoanBll _bus;
 
         #endregion
+
         #region Constructor
         public frmLogin()
         {
@@ -173,7 +174,7 @@ namespace ChamThiSolution.ServerApp.Forms
 
         #endregion
 
-        #region Properties
+        #region Public
 
         public TaiKhoan TaiKhoan { get; set; }
 

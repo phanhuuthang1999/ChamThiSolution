@@ -1,7 +1,7 @@
 ﻿
-namespace ChamThiSolution.MasterApp.Forms
+namespace ChamThiSolution.ServerApp.Forms
 {
-    partial class frmTaiKhoan
+    partial class frmPhongThi
     {
         /// <summary>
         /// Required designer variable.
@@ -29,16 +29,6 @@ namespace ChamThiSolution.MasterApp.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.TenDangNhap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MatKhau = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IsQuyen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IsActive = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IDGiamThi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IDThiSinh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IDPhongThi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IDKetQua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
@@ -50,103 +40,10 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gridControl
-            // 
-            this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl.Location = new System.Drawing.Point(0, 158);
-            this.gridControl.MainView = this.gridView;
-            this.gridControl.MenuManager = this.ribbonControl;
-            this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(1117, 501);
-            this.gridControl.TabIndex = 2;
-            this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView});
-            // 
-            // gridView
-            // 
-            this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.TenDangNhap,
-            this.MatKhau,
-            this.IsQuyen,
-            this.IsActive,
-            this.IDGiamThi,
-            this.IDThiSinh,
-            this.IDPhongThi,
-            this.IDKetQua});
-            this.gridView.GridControl = this.gridControl;
-            this.gridView.Name = "gridView";
-            this.gridView.OptionsBehavior.Editable = false;
-            this.gridView.OptionsBehavior.ReadOnly = true;
-            // 
-            // TenDangNhap
-            // 
-            this.TenDangNhap.Caption = "Tên đăng nhập";
-            this.TenDangNhap.FieldName = "TenDangNhap";
-            this.TenDangNhap.Name = "TenDangNhap";
-            this.TenDangNhap.Visible = true;
-            this.TenDangNhap.VisibleIndex = 0;
-            // 
-            // MatKhau
-            // 
-            this.MatKhau.Caption = "Mật khẩu";
-            this.MatKhau.FieldName = "MatKhau";
-            this.MatKhau.Name = "MatKhau";
-            this.MatKhau.Visible = true;
-            this.MatKhau.VisibleIndex = 1;
-            // 
-            // IsQuyen
-            // 
-            this.IsQuyen.Caption = "Quyền";
-            this.IsQuyen.FieldName = "Quyen";
-            this.IsQuyen.Name = "IsQuyen";
-            this.IsQuyen.Visible = true;
-            this.IsQuyen.VisibleIndex = 2;
-            // 
-            // IsActive
-            // 
-            this.IsActive.Caption = "Trạng thái hoạt động";
-            this.IsActive.FieldName = "IsActive";
-            this.IsActive.Name = "IsActive";
-            this.IsActive.Visible = true;
-            this.IsActive.VisibleIndex = 3;
-            // 
-            // IDGiamThi
-            // 
-            this.IDGiamThi.Caption = "Giám Thị";
-            this.IDGiamThi.FieldName = "IDGiamThi";
-            this.IDGiamThi.Name = "IDGiamThi";
-            this.IDGiamThi.Visible = true;
-            this.IDGiamThi.VisibleIndex = 4;
-            // 
-            // IDThiSinh
-            // 
-            this.IDThiSinh.Caption = "Thí Sinh";
-            this.IDThiSinh.FieldName = "IDThiSinh";
-            this.IDThiSinh.Name = "IDThiSinh";
-            this.IDThiSinh.Visible = true;
-            this.IDThiSinh.VisibleIndex = 5;
-            // 
-            // IDPhongThi
-            // 
-            this.IDPhongThi.Caption = "Phòng Thi";
-            this.IDPhongThi.FieldName = "IDPhongThi";
-            this.IDPhongThi.Name = "IDPhongThi";
-            this.IDPhongThi.Visible = true;
-            this.IDPhongThi.VisibleIndex = 6;
-            // 
-            // IDKetQua
-            // 
-            this.IDKetQua.Caption = "Kết Quả";
-            this.IDKetQua.FieldName = "IDKetQua";
-            this.IDKetQua.Name = "IDKetQua";
-            this.IDKetQua.Visible = true;
-            this.IDKetQua.VisibleIndex = 7;
             // 
             // ribbonControl
             // 
@@ -167,7 +64,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPage1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1117, 158);
+            this.ribbonControl.Size = new System.Drawing.Size(1179, 158);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -177,7 +74,6 @@ namespace ChamThiSolution.MasterApp.Forms
             this.bbiPrintPreview.Id = 14;
             this.bbiPrintPreview.ImageOptions.ImageUri.Uri = "Preview";
             this.bbiPrintPreview.Name = "bbiPrintPreview";
-            this.bbiPrintPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrintPreview_ItemClick);
             // 
             // bsiRecordsCount
             // 
@@ -244,35 +140,45 @@ namespace ChamThiSolution.MasterApp.Forms
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 635);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 689);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1117, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1179, 24);
             // 
-            // frmTaiKhoan
+            // tablePanel1
+            // 
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 5F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 84.25F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 20.75F)});
+            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel1.Location = new System.Drawing.Point(0, 158);
+            this.tablePanel1.Name = "tablePanel1";
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
+            this.tablePanel1.Size = new System.Drawing.Size(1179, 531);
+            this.tablePanel1.TabIndex = 2;
+            // 
+            // frmPhongThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 659);
+            this.ClientSize = new System.Drawing.Size(1179, 713);
+            this.Controls.Add(this.tablePanel1);
             this.Controls.Add(this.ribbonStatusBar);
-            this.Controls.Add(this.gridControl);
             this.Controls.Add(this.ribbonControl);
-            this.Name = "frmTaiKhoan";
+            this.Name = "frmPhongThi";
             this.Ribbon = this.ribbonControl;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "QUẢN LÝ TÀI KHOẢN ";
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraGrid.GridControl gridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
@@ -284,13 +190,6 @@ namespace ChamThiSolution.MasterApp.Forms
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
-        private DevExpress.XtraGrid.Columns.GridColumn TenDangNhap;
-        private DevExpress.XtraGrid.Columns.GridColumn MatKhau;
-        private DevExpress.XtraGrid.Columns.GridColumn IsQuyen;
-        private DevExpress.XtraGrid.Columns.GridColumn IsActive;
-        private DevExpress.XtraGrid.Columns.GridColumn IDGiamThi;
-        private DevExpress.XtraGrid.Columns.GridColumn IDThiSinh;
-        private DevExpress.XtraGrid.Columns.GridColumn IDPhongThi;
-        private DevExpress.XtraGrid.Columns.GridColumn IDKetQua;
+        private DevExpress.Utils.Layout.TablePanel tablePanel1;
     }
 }

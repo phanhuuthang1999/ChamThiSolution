@@ -5,7 +5,7 @@ namespace ChamThiSolution.ProxyObject
     {
         public static int Port = 9999;
 
-        public static string IPServer = "192.168.1.31";
+        public static string IPServer = "localhost";
         public static string objURI = "PRIME_URI";
         public static string TcpChannelName = "Exam1";
 

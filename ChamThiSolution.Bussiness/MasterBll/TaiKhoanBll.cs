@@ -51,9 +51,9 @@ namespace ChamThiSolution.Bussiness.MasterBll
             return Context.SaveChanges();
         }
 
-        public int DeleteTaiKhoans(TaiKhoan pTaiKhoans)
+        public int DeleteTaiKhoans(string pTaiKhoans)
         {
-            var TaiKhoans = Context.TaiKhoans.FirstOrDefault(p => p.TenDangNhap.Equals(pTaiKhoans.TenDangNhap));
+            var TaiKhoans = Context.TaiKhoans.FirstOrDefault(p => p.TenDangNhap.Equals(pTaiKhoans));
 
             Context.TaiKhoans.Remove(TaiKhoans);
 

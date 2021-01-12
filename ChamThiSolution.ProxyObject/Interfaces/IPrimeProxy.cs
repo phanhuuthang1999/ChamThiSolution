@@ -1,4 +1,5 @@
 ﻿using ChamThiSolution.Data.Entities;
+using QuanLyChamThiSolution.Data.DTO;
 using System;
 using System.Collections.Generic;
 
@@ -33,30 +34,44 @@ namespace ChamThiSolution.ProxyObject.Interfaces
     public delegate bool CheckIsQuyen(string taikhoan);
     public delegate bool GetLogin(string taikhoan, string matkhau);
     public delegate bool GetLoginPhong(string IdPhong);
-    public delegate void GetConnection();
+    //public delegate void GetConnection();
     public delegate List<PhongThi> GetPhongThi();
 
     [Serializable]
     public delegate void loadThongTin();
     public delegate int GetIdThiSinh(string tk);
 
-    //[Serializable]
-    //public delegate ThiSinhDTO GetTaiKhoanTS(int tk);
+    [Serializable]
+    public delegate ThiSinhDTO GetTaiKhoanTS(int tk);
+    public delegate PhongThiDTO[] GetPhongThiChoThiSinh();
+    public delegate bool GetIdPhongThi(string taikhoan, string matkhau, string idPhongThi);
+    public delegate ThiSinhDTO[] GetThiSinhPhongThi(int idPhongthi);
+    public delegate bool GetPhongThiMo(int idPhongThi);
+    public delegate void ButtonEnable();
+
+
 
     public interface IPrimeProxy
     {
-        void GetConnection();
+        event GetPhongThiMo PhongThiMoReceived;
+        void ButtonEnable();
+        PhongThiDTO[] GetPhongThiChoThiSinh();
+
+        ThiSinhDTO[] GetThiSinhPhongThi(int idPhongThi);
+
+        bool GetIdPhongThi(string taikhoan, string matkhau, string idPhongThi);
+        //void GetConnection();
 
         bool LoginPhong(string IdPhong);
 
         bool CheckIsQuyen(string taikhoan);
         bool GetLogin(string taikhoan, string matkhau);
 
-        //int GetIdThiSinh(string tk);
+        int GetIdThiSinh(string tk);
 
-      //  ThiSinhDTO GetTaiKhoanTS(int tk);
+        ThiSinhDTO GetTaiKhoanTS(int tk);
 
-       // List<PhongThi> GetPhongThi();
+        List<PhongThi> GetPhongThi();
 
         bool EnableRoom();
 
@@ -80,8 +95,14 @@ namespace ChamThiSolution.ProxyObject.Interfaces
 
         event GetLoginPhong LoginPhongReceived;
 
-        event GetConnection ConnectReceived;
+        //event GetConnection ConnectReceived;
 
         event GetPhongThi PhongThiReceived;
+
+        event GetIdPhongThi IdPhongThiReceived;
+
+        event GetThiSinhPhongThi ThiSinhPhongThiReceived;
+
+        event ButtonEnable ButtonEnableReceived;
     }
 }

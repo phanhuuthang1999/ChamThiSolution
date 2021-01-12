@@ -6,7 +6,7 @@ namespace ChamThiSolution.ProxyObject.EventsWrapper
     public class ClientEventsWrapper : MarshalByRefObject
     {
         public event EndChannel EndChannelReceived;
-        public event GetConnection ConnectionReceived;
+        public event ButtonEnable ButtonEnableReceived;
 
         public event GetLogin LoginReceived;
 
@@ -18,14 +18,6 @@ namespace ChamThiSolution.ProxyObject.EventsWrapper
             }
         }
 
-        public void ConnectionReceiveHandler()
-        {
-            if (ConnectionReceived != null)
-            {
-                ConnectionReceived();
-            }
-        }
-
         public bool LoginReceivedHandler(string taikhoan, string matkhau)
         {
             if (LoginReceived != null)
@@ -33,6 +25,13 @@ namespace ChamThiSolution.ProxyObject.EventsWrapper
                 LoginReceived(taikhoan, matkhau);
             }
             return true;
+        }
+        public void ButtonEnableReceivedHandler()
+        {
+            if (ButtonEnableReceived != null)
+            {
+                ButtonEnableReceived();
+            }
         }
     }
 }

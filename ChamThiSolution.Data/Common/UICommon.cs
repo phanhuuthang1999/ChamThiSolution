@@ -1,6 +1,8 @@
 ﻿using DevExpress.XtraEditors;
 using System;
 using System.ComponentModel;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using DialogResult = System.Windows.Forms.DialogResult;
 
@@ -112,6 +114,24 @@ namespace Common
         }
 
         #endregion
+
+        public static byte[] ImageToByteArray(Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
+            }
+        }
+
+        public static Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            using (var ms = new MemoryStream(byteArrayIn))
+            {
+                return Image.FromStream(ms);
+            }
+
+        }
 
     }
 }

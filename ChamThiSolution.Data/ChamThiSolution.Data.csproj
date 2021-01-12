@@ -62,6 +62,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
@@ -74,6 +75,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\UICommon.cs" />
+    <Compile Include="DTO\PhongThiDTO.cs" />
+    <Compile Include="DTO\TaiKhoanDTO.cs" />
+    <Compile Include="DTO\ThiSinhDTO.cs" />
     <Compile Include="Entities\CauHoi.cs" />
     <Compile Include="EF\ChamThiDbContext.cs" />
     <Compile Include="Entities\GiamThi.cs" />

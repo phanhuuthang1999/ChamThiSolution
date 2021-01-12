@@ -1,8 +1,10 @@
-﻿using ChamThiSolution.Bussiness.Bll;
-using ChamThiSolution.Data.Entities;
+﻿using ChamThiSolution.Data.Entities;
 using ChamThiSolution.ProxyObject.Interfaces;
+using QuanLyChamThiSolution.Data.DTO;
 using System;
 using System.Collections.Generic;
+using Common;
+using ChamThiSolution.Bussiness.Bll;
 using System.Linq;
 
 namespace ChamThiSolution.ServerApp.Proxy
@@ -11,82 +13,47 @@ namespace ChamThiSolution.ServerApp.Proxy
     {
         #region Variable
 
-        private TaiKhoanBll _bus;
-        //private KetQuaBll _busKQ;
-        //private ThiSinhBll _busTs;
-        //private PhongThiBll _busPH;
-
-        #endregion
-
-        #region Constructor
-
-        public PrimeProxy()
-        {
-            _bus = new TaiKhoanBll();
-            //_busKQ = new KetQuaBll();
-            //_busTs = new ThiSinhBll();
-            //_busPH = new PhongThiBll();
-        }
+        private TaiKhoanBll _bus = new TaiKhoanBll();
+        private ChamDiemBll _busKQ = new ChamDiemBll();
+        private ThiSinhBll _busTs = new ThiSinhBll();
+        private PhongThiBll _busPH = new PhongThiBll();
 
         #endregion
 
         #region Events
 
+        public event GetPhongThiMo PhongThiMoReceived;
         public event EnableExam EnableExamReceived;
         public event EndChannel EndReceived;
         public event EndExam EndExamReceived;
         public event GetPoint PointReceived;
-        public event GetLogin LoginReceived;
-        public event GetConnection ConnectReceived;
-        public event GetLoginPhong LoginPhongReceived;
         public event CheckIsQuyen IsQuyenReceived;
-        public event loadThongTin loadThongTinReceived;
-        public event GetIdThiSinh getIdThiSinhReceived;
-      //  public event GetTaiKhoanTS getTaiKhoanTSReceived;
+        public event GetLogin LoginReceived;
+        public event GetLoginPhong LoginPhongReceived;
         public event GetPhongThi PhongThiReceived;
+        public event GetIdPhongThi IdPhongThiReceived;
+        public event GetThiSinhPhongThi ThiSinhPhongThiReceived;
+        public event ButtonEnable ButtonEnableReceived;
 
         #endregion
-        //public ThiSinhDTO GetTaiKhoanTS(int tk)
-        //{
-        //    return _busTs.GetTaiKhoanThiSinh(tk);
-        //}
 
+        #region Methods
 
-        public bool EnableRoom()
+        public void ButtonEnable()
         {
+            Delegate[] invocationList = ButtonEnableReceived.GetInvocationList();
 
-            throw new NotImplementedException();
-        }
-
-        //public async Task<int> EndChannel()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public async Task<int> EndEXam()
-        //{
-        //    return await 1;
-        //}
-
-        public bool GetPoint(string Answer)
-        {
-            return true;
-        }
-
-        public void GetConnection()
-        {
-            Delegate[] invocationList = ConnectReceived.GetInvocationList();
-
-            foreach (GetConnection item in invocationList)
+            foreach (ButtonEnable d in invocationList)
             {
                 try
                 {
-                     item();
+                    d();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    UICommon.ShowMsgErrorString(ex + "", "Error");
+                    ButtonEnableReceived -= d;
 
-                    ConnectReceived -= item;
                 }
             }
         }
@@ -96,25 +63,57 @@ namespace ChamThiSolution.ServerApp.Proxy
             return _bus.CheckQuyenClient(taikhoan);
         }
 
+        public bool EnableRoom()
+        {
+            return true;
+        }
+
+        public bool GetIdPhongThi(string taikhoan, string matkhau, string idPhongThi)
+        {
+            return _bus.GetIdPhongThi(taikhoan, matkhau, idPhongThi);
+        }
+
+        public int GetIdThiSinh(string tk)
+        {
+            return _busTs.getIdThiSinh(tk);
+        }
+
         public bool GetLogin(string taikhoan, string matkhau)
         {
             return _bus.GetLogin(taikhoan, matkhau);
         }
 
-        public bool LoginPhong(string IdPhong)
+        public List<PhongThi> GetPhongThi()
         {
-            throw new NotImplementedException();
+            var data = _busPH.GetAll();
+            return data.ToList();
         }
 
-        //public List<PhongThi> GetPhongThi()
-        //{
-        //    var data = _busPH.GetAll();
-        //    return data.ToList();
-        //}
+        public PhongThiDTO[] GetPhongThiChoThiSinh()
+        {
+            return _busTs.GetPhongThiChoThiSinh();
+        }
 
-        //public int GetIdThiSinh(string tk)
-        //{
-        //    return _busTs.getIdThiSinh(tk);
-        //}
+        public bool GetPoint(string Answer)
+        {
+            return true;
+        }
+
+        public ThiSinhDTO GetTaiKhoanTS(int tk)
+        {
+            return _busTs.GetTaiKhoanThiSinh(tk);
+        }
+
+        public ThiSinhDTO[] GetThiSinhPhongThi(int idPhongThi)
+        {
+            return _busPH.GetThiSinhPhongThi(idPhongThi);
+        }
+
+        public bool LoginPhong(string IdPhong)
+        {
+            return true;
+        }
+
+        #endregion
     }
 }

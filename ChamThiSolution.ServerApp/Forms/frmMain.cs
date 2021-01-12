@@ -71,22 +71,22 @@ namespace ChamThiSolution.Server.Forms
 
         private void BtnDangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.Hide();
+            Hide();
             frmLogin frm = new frmLogin();
             frm.Show();
         }
 
         private void BtnPhongThi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //Form f = isActive(typeof(frmPho));
-            //if (f == null)
-            //{
-            //    frmPhongThi frm = new frmPhongThi();
-            //    frm.MdiParent = this;
-            //    frm.Show();
-            //}
-            //else
-            //    f.Activate();
+            Form f = isActive(typeof(frmPhongThi));
+            if (f == null)
+            {
+                frmPhongThi frm = new frmPhongThi();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+                f.Activate();
         }
 
         #endregion
