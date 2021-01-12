@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Bll\BaseBll.cs" />
     <Compile Include="Bll\ChamDiemBll.cs" />
+    <Compile Include="Bll\DeThiBll.cs" />
     <Compile Include="Bll\PhongThiBll.cs" />
     <Compile Include="Bll\TaiKhoanBll.cs" />
     <Compile Include="Bll\ThiSinhBll.cs" />

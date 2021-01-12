@@ -14,7 +14,7 @@ namespace ChamThiSolution.Server.Forms
         #region Variable
 
         private TcpChannel tcpChannel = null;
-        private PrimeProxy primeProxy;
+        public static PrimeProxy primeProxy;
 
         #endregion
 

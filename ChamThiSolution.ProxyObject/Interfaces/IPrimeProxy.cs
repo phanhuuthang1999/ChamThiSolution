@@ -27,6 +27,7 @@ namespace ChamThiSolution.ProxyObject.Interfaces
     /// Lấy kết quả trả về cho thí sinh điểm
     /// </summary>
     [Serializable]
+    public delegate void GetDeThi();
     public delegate void EndExam();
     public delegate void GetPoint(string Answer);
 
@@ -34,7 +35,6 @@ namespace ChamThiSolution.ProxyObject.Interfaces
     public delegate bool CheckIsQuyen(string taikhoan);
     public delegate bool GetLogin(string taikhoan, string matkhau);
     public delegate bool GetLoginPhong(string IdPhong);
-    //public delegate void GetConnection();
     public delegate List<PhongThi> GetPhongThi();
 
     [Serializable]
@@ -47,17 +47,17 @@ namespace ChamThiSolution.ProxyObject.Interfaces
     public delegate bool GetIdPhongThi(string taikhoan, string matkhau, string idPhongThi);
     public delegate ThiSinhDTO[] GetThiSinhPhongThi(int idPhongthi);
     public delegate bool GetPhongThiMo(int idPhongThi);
-    public delegate void ButtonEnable();
 
 
 
     public interface IPrimeProxy
-    {
-        event GetPhongThiMo PhongThiMoReceived;
-        void ButtonEnable();
+    { 
+
         PhongThiDTO[] GetPhongThiChoThiSinh();
 
         ThiSinhDTO[] GetThiSinhPhongThi(int idPhongThi);
+
+        void NopBai();
 
         bool GetIdPhongThi(string taikhoan, string matkhau, string idPhongThi);
         //void GetConnection();
@@ -73,13 +73,15 @@ namespace ChamThiSolution.ProxyObject.Interfaces
 
         List<PhongThi> GetPhongThi();
 
-        bool EnableRoom();
+        void GetDeThi();
 
-        //Task<int> EndChannel();
-
-        //Task<int> EndEXam();
+        void EnableRoom();
 
         bool GetPoint(string Answer);
+
+        event NopBai NopBaiReceived;
+
+        event GetPhongThiMo PhongThiMoReceived;
 
         event EnableExam EnableExamReceived;
 
@@ -95,14 +97,13 @@ namespace ChamThiSolution.ProxyObject.Interfaces
 
         event GetLoginPhong LoginPhongReceived;
 
-        //event GetConnection ConnectReceived;
-
         event GetPhongThi PhongThiReceived;
 
         event GetIdPhongThi IdPhongThiReceived;
 
         event GetThiSinhPhongThi ThiSinhPhongThiReceived;
 
-        event ButtonEnable ButtonEnableReceived;
+        event GetDeThi DeThiReceived;
+
     }
 }

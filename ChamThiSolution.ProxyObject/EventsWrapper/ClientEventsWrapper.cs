@@ -6,9 +6,20 @@ namespace ChamThiSolution.ProxyObject.EventsWrapper
     public class ClientEventsWrapper : MarshalByRefObject
     {
         public event EndChannel EndChannelReceived;
-        public event ButtonEnable ButtonEnableReceived;
 
         public event GetLogin LoginReceived;
+
+        public event EnableExam ExamReceived;
+
+        public event NopBai NopBaiReceived;
+
+        public void NopBaiReceiveHandler()
+        {
+            if (NopBaiReceived != null)
+            {
+                NopBaiReceiveHandler();
+            }
+        }
 
         public void EndChannelReceiveHandler()
         {
@@ -26,12 +37,17 @@ namespace ChamThiSolution.ProxyObject.EventsWrapper
             }
             return true;
         }
-        public void ButtonEnableReceivedHandler()
+
+        public void ExamReceivedHandler()
         {
-            if (ButtonEnableReceived != null)
+            if (ExamReceived != null)
             {
-                ButtonEnableReceived();
+                ExamReceived();
             }
+
         }
+
+
+
     }
 }

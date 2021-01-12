@@ -27,7 +27,7 @@ namespace ChamThiSolution.Bussiness.MasterBll
 
         public bool CheckExistPhong(PhongThi pPhongThi)
         {
-            return Context.PhongThis.Any(p => p.MaPhongThi == pPhongThi.MaPhongThi);
+            return Context.PhongThis.Any(p => p.MaPhongThi == pPhongThi.MaPhongThi && p.Id != pPhongThi.Id);
         }
 
         public int SavePhongThi(PhongThi pPhongThi)
@@ -54,12 +54,11 @@ namespace ChamThiSolution.Bussiness.MasterBll
             var PhongThi = Context.PhongThis.FirstOrDefault(p => p.MaPhongThi == pPhongThi.MaPhongThi);
             Context.PhongThis.Remove(PhongThi);
 
-
             return Context.SaveChanges();
         }
 
         /// <summary>
-        /// Trạng Thái 1 : Đang có sinh viên thi : 0
+        /// Trạng Thái 1 : Đang có sinh viên thi || : 0
         /// </summary>
         /// <param name="pPhongThi"></param>
         /// <returns></returns>

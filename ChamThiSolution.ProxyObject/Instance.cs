@@ -3,7 +3,7 @@ namespace ChamThiSolution.ProxyObject
 {
     public static class Instance
     {
-        public static int Port = 9999;
+        public static int Port = 9998;
 
         public static string IPServer = "localhost";
         public static string objURI = "PRIME_URI";

@@ -33,39 +33,33 @@ namespace ChamThiSolution.ServerApp.Proxy
         public event GetPhongThi PhongThiReceived;
         public event GetIdPhongThi IdPhongThiReceived;
         public event GetThiSinhPhongThi ThiSinhPhongThiReceived;
-        public event ButtonEnable ButtonEnableReceived;
+        public event GetDeThi DeThiReceived;
 
         #endregion
 
         #region Methods
-
-        public void ButtonEnable()
-        {
-            Delegate[] invocationList = ButtonEnableReceived.GetInvocationList();
-
-            foreach (ButtonEnable d in invocationList)
-            {
-                try
-                {
-                    d();
-                }
-                catch (Exception ex)
-                {
-                    UICommon.ShowMsgErrorString(ex + "", "Error");
-                    ButtonEnableReceived -= d;
-
-                }
-            }
-        }
 
         public bool CheckIsQuyen(string taikhoan)
         {
             return _bus.CheckQuyenClient(taikhoan);
         }
 
-        public bool EnableRoom()
+        public void EnableRoom()
         {
-            return true;
+            Delegate[] invocationList = EnableExamReceived.GetInvocationList();
+
+            foreach (EnableExam d in invocationList)
+            {
+                try
+                {
+                    d();
+                }
+                catch (Exception)
+                {
+                    EnableExamReceived -= d;
+
+                }
+            }
         }
 
         public bool GetIdPhongThi(string taikhoan, string matkhau, string idPhongThi)
@@ -113,6 +107,17 @@ namespace ChamThiSolution.ServerApp.Proxy
         {
             return true;
         }
+
+        public void GetDeThi()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region Public
+
+        public PhongThi PhongThi { get; set; }
 
         #endregion
     }

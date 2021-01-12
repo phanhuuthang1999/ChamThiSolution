@@ -1,12 +1,10 @@
-﻿
-using ChamThiSolution.ClientApp.Terminal;
+﻿using ChamThiSolution.ClientApp.Terminal;
 using ChamThiSolution.ProxyObject.EventsWrapper;
 using ChamThiSolution.ProxyObject.Interfaces;
 using QuanLyChamThiSolution.Data.DTO;
 using System;
 using System.Drawing;
 using System.Runtime.Remoting.Channels.Tcp;
-using System.Windows.Forms;
 
 namespace ChamThiSolution.ClientApp.Forms
 {
@@ -32,13 +30,14 @@ namespace ChamThiSolution.ClientApp.Forms
             TkText = s;
             txtPhongThi.Text = cbb;
             ClientEventsWrapper clientEventsWrapper = new ClientEventsWrapper();
-            primeProxy.ButtonEnableReceived += clientEventsWrapper.ButtonEnableReceivedHandler;
+
+            primeProxy.EnableExamReceived += clientEventsWrapper.ExamReceivedHandler;
 
             // Register client handler to wrapper event
-            clientEventsWrapper.ButtonEnableReceived += ButtonEnableReceivedHandler;
+            clientEventsWrapper.ExamReceived += ClientEventsWrapper_ExamReceived; ;
 
             btnThi.Click += BtnThi_Click;
-
+            btnRefresh.Click += BtnRefresh_Click;
         }
 
         #endregion
@@ -69,29 +68,23 @@ namespace ChamThiSolution.ClientApp.Forms
         #endregion
 
         #region Private
-
-        private void ButtonEnableReceivedHandler()
+        private void ClientEventsWrapper_ExamReceived()
         {
-            GoiTatButton();
+            btnThi.Enabled = true;
         }
-
-        private void GoiTatButton()
-        {
-            TatButton(true);
-        }
-
-        private void TatButton(bool dung)
-        {
-            btnThi.Invoke(new MethodInvoker(() => btnThi.Enabled = dung));
-        }
-
         #endregion
 
         #region Events
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            //primeProxy.EnableRoom();
+            btnThi.Enabled = true;
+        }
 
         private void BtnThi_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            frmBaiThi fmr = new frmBaiThi();
+            fmr.ShowDialog();
         }
 
         #endregion

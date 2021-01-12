@@ -32,17 +32,20 @@ namespace ChamThiSolution.ServerApp.Forms
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
-            this.bbiNew = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBatDau = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThuBai = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCamThi = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
+            this.tablePanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -53,10 +56,9 @@ namespace ChamThiSolution.ServerApp.Forms
             this.ribbonControl.SearchEditItem,
             this.bbiPrintPreview,
             this.bsiRecordsCount,
-            this.bbiNew,
-            this.bbiEdit,
-            this.bbiDelete,
-            this.bbiRefresh});
+            this.btnBatDau,
+            this.btnThuBai,
+            this.btnCamThi});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.MaxItemId = 20;
             this.ribbonControl.Name = "ribbonControl";
@@ -81,33 +83,26 @@ namespace ChamThiSolution.ServerApp.Forms
             this.bsiRecordsCount.Id = 15;
             this.bsiRecordsCount.Name = "bsiRecordsCount";
             // 
-            // bbiNew
+            // btnBatDau
             // 
-            this.bbiNew.Caption = "New";
-            this.bbiNew.Id = 16;
-            this.bbiNew.ImageOptions.ImageUri.Uri = "New";
-            this.bbiNew.Name = "bbiNew";
+            this.btnBatDau.Caption = "Bắt đầu";
+            this.btnBatDau.Id = 16;
+            this.btnBatDau.ImageOptions.ImageUri.Uri = "New";
+            this.btnBatDau.Name = "btnBatDau";
             // 
-            // bbiEdit
+            // btnThuBai
             // 
-            this.bbiEdit.Caption = "Edit";
-            this.bbiEdit.Id = 17;
-            this.bbiEdit.ImageOptions.ImageUri.Uri = "Edit";
-            this.bbiEdit.Name = "bbiEdit";
+            this.btnThuBai.Caption = "Thu bài";
+            this.btnThuBai.Id = 17;
+            this.btnThuBai.ImageOptions.ImageUri.Uri = "Edit";
+            this.btnThuBai.Name = "btnThuBai";
             // 
-            // bbiDelete
+            // btnCamThi
             // 
-            this.bbiDelete.Caption = "Delete";
-            this.bbiDelete.Id = 18;
-            this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
-            this.bbiDelete.Name = "bbiDelete";
-            // 
-            // bbiRefresh
-            // 
-            this.bbiRefresh.Caption = "Refresh";
-            this.bbiRefresh.Id = 19;
-            this.bbiRefresh.ImageOptions.ImageUri.Uri = "Refresh";
-            this.bbiRefresh.Name = "bbiRefresh";
+            this.btnCamThi.Caption = "Cấm thi";
+            this.btnCamThi.Id = 18;
+            this.btnCamThi.ImageOptions.ImageUri.Uri = "Delete";
+            this.btnCamThi.Name = "btnCamThi";
             // 
             // ribbonPage1
             // 
@@ -122,10 +117,9 @@ namespace ChamThiSolution.ServerApp.Forms
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
             this.ribbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiNew);
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiEdit);
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiDelete);
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiRefresh);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnBatDau);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnThuBai);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnCamThi);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Tasks";
             // 
@@ -148,9 +142,12 @@ namespace ChamThiSolution.ServerApp.Forms
             // tablePanel1
             // 
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 5F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 84.25F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 20.75F)});
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 150F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel1.Controls.Add(this.labelControl1);
+            this.tablePanel1.Controls.Add(this.labelControl2);
+            this.tablePanel1.Controls.Add(this.labelControl3);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel1.Location = new System.Drawing.Point(0, 158);
             this.tablePanel1.Name = "tablePanel1";
@@ -159,6 +156,40 @@ namespace ChamThiSolution.ServerApp.Forms
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePanel1.Size = new System.Drawing.Size(1179, 531);
             this.tablePanel1.TabIndex = 2;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.tablePanel1.SetColumn(this.labelControl1, 0);
+            this.labelControl1.Location = new System.Drawing.Point(3, 5);
+            this.labelControl1.Name = "labelControl1";
+            this.tablePanel1.SetRow(this.labelControl1, 0);
+            this.labelControl1.Size = new System.Drawing.Size(111, 16);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Danh sách phòng";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.tablePanel1.SetColumn(this.labelControl2, 1);
+            this.labelControl2.Location = new System.Drawing.Point(239, 5);
+            this.labelControl2.Name = "labelControl2";
+            this.tablePanel1.SetRow(this.labelControl2, 0);
+            this.labelControl2.Size = new System.Drawing.Size(121, 16);
+            this.labelControl2.TabIndex = 0;
+            this.labelControl2.Text = "Thông tin sinh viên";
+            // 
+            // labelControl3
+            // 
+            this.tablePanel1.SetColumn(this.labelControl3, 2);
+            this.labelControl3.Location = new System.Drawing.Point(946, 6);
+            this.labelControl3.Name = "labelControl3";
+            this.tablePanel1.SetRow(this.labelControl3, 0);
+            this.labelControl3.Size = new System.Drawing.Size(63, 13);
+            this.labelControl3.TabIndex = 0;
+            this.labelControl3.Text = "labelControl1";
             // 
             // frmPhongThi
             // 
@@ -173,6 +204,8 @@ namespace ChamThiSolution.ServerApp.Forms
             this.StatusBar = this.ribbonStatusBar;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
+            this.tablePanel1.ResumeLayout(false);
+            this.tablePanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,10 +219,12 @@ namespace ChamThiSolution.ServerApp.Forms
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
-        private DevExpress.XtraBars.BarButtonItem bbiNew;
-        private DevExpress.XtraBars.BarButtonItem bbiEdit;
-        private DevExpress.XtraBars.BarButtonItem bbiDelete;
-        private DevExpress.XtraBars.BarButtonItem bbiRefresh;
+        private DevExpress.XtraBars.BarButtonItem btnBatDau;
+        private DevExpress.XtraBars.BarButtonItem btnThuBai;
+        private DevExpress.XtraBars.BarButtonItem btnCamThi;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
     }
 }

@@ -27,5 +27,24 @@ namespace ChamThiSolution.Bussiness.Bll
                                 });
             return thiSinhQuery.ToArray();
         }
+        public bool CheckExistPhong(PhongThi pPhongThi)
+        {
+            return Context.PhongThis.Any(p => p.MaPhongThi == pPhongThi.MaPhongThi && p.Id != pPhongThi.Id);
+        }
+
+        public int SetStutus()
+        {
+            var PhongThi = Context.PhongThis.FirstOrDefault(p => p.Id == 1);
+
+            if (PhongThi == null)
+            {
+                PhongThi = new PhongThi();
+                Context.PhongThis.Add(PhongThi);
+            }
+
+            PhongThi.Status = 1;
+
+            return Context.SaveChanges();
+        }
     }
 }

@@ -30,23 +30,24 @@ namespace ChamThiSolution.ClientApp.Forms
         private void InitializeComponent()
         {
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.btnThi = new DevExpress.XtraEditors.SimpleButton();
+            this.txtMSSV = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.btnThi = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.txtMSSV = new DevExpress.XtraEditors.TextEdit();
             this.txtHoDem = new DevExpress.XtraEditors.TextEdit();
             this.txtTen = new DevExpress.XtraEditors.TextEdit();
             this.txtGioiTinh = new DevExpress.XtraEditors.TextEdit();
             this.txtPhongThi = new DevExpress.XtraEditors.TextEdit();
+            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMSSV.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoDem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGioiTinh.Properties)).BeginInit();
@@ -61,6 +62,7 @@ namespace ChamThiSolution.ClientApp.Forms
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 40F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 20F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 40F)});
+            this.tablePanel1.Controls.Add(this.btnRefresh);
             this.tablePanel1.Controls.Add(this.txtMSSV);
             this.tablePanel1.Controls.Add(this.labelControl2);
             this.tablePanel1.Controls.Add(this.btnThi);
@@ -87,34 +89,25 @@ namespace ChamThiSolution.ClientApp.Forms
             this.tablePanel1.Size = new System.Drawing.Size(696, 252);
             this.tablePanel1.TabIndex = 0;
             // 
-            // labelControl1
+            // txtMSSV
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseTextOptions = true;
-            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tablePanel1.SetColumn(this.labelControl1, 0);
-            this.tablePanel1.SetColumnSpan(this.labelControl1, 5);
-            this.labelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl1.Location = new System.Drawing.Point(3, 3);
-            this.labelControl1.Name = "labelControl1";
-            this.tablePanel1.SetRow(this.labelControl1, 0);
-            this.labelControl1.Size = new System.Drawing.Size(690, 54);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "THÔNG TIN SINH VIÊN";
+            this.tablePanel1.SetColumn(this.txtMSSV, 2);
+            this.txtMSSV.Enabled = false;
+            this.txtMSSV.Location = new System.Drawing.Point(264, 68);
+            this.txtMSSV.Name = "txtMSSV";
+            this.tablePanel1.SetRow(this.txtMSSV, 1);
+            this.txtMSSV.Size = new System.Drawing.Size(168, 20);
+            this.txtMSSV.TabIndex = 4;
             // 
-            // pictureEdit1
+            // labelControl2
             // 
-            this.tablePanel1.SetColumn(this.pictureEdit1, 0);
-            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureEdit1.Enabled = false;
-            this.pictureEdit1.Location = new System.Drawing.Point(3, 63);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.tablePanel1.SetRow(this.pictureEdit1, 1);
-            this.tablePanel1.SetRowSpan(this.pictureEdit1, 4);
-            this.pictureEdit1.Size = new System.Drawing.Size(168, 138);
-            this.pictureEdit1.TabIndex = 1;
+            this.tablePanel1.SetColumn(this.labelControl2, 1);
+            this.labelControl2.Location = new System.Drawing.Point(177, 71);
+            this.labelControl2.Name = "labelControl2";
+            this.tablePanel1.SetRow(this.labelControl2, 1);
+            this.labelControl2.Size = new System.Drawing.Size(73, 13);
+            this.labelControl2.TabIndex = 3;
+            this.labelControl2.Text = "Mã số sinh viên";
             // 
             // btnThi
             // 
@@ -130,15 +123,34 @@ namespace ChamThiSolution.ClientApp.Forms
             this.btnThi.TabIndex = 2;
             this.btnThi.Text = "VÀO THI";
             // 
-            // labelControl2
+            // pictureEdit1
             // 
-            this.tablePanel1.SetColumn(this.labelControl2, 1);
-            this.labelControl2.Location = new System.Drawing.Point(177, 71);
-            this.labelControl2.Name = "labelControl2";
-            this.tablePanel1.SetRow(this.labelControl2, 1);
-            this.labelControl2.Size = new System.Drawing.Size(73, 13);
-            this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Mã số sinh viên";
+            this.tablePanel1.SetColumn(this.pictureEdit1, 0);
+            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit1.Enabled = false;
+            this.pictureEdit1.Location = new System.Drawing.Point(3, 63);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.tablePanel1.SetRow(this.pictureEdit1, 1);
+            this.tablePanel1.SetRowSpan(this.pictureEdit1, 4);
+            this.pictureEdit1.Size = new System.Drawing.Size(168, 138);
+            this.pictureEdit1.TabIndex = 1;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.tablePanel1.SetColumn(this.labelControl1, 0);
+            this.tablePanel1.SetColumnSpan(this.labelControl1, 5);
+            this.labelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl1.Location = new System.Drawing.Point(3, 3);
+            this.labelControl1.Name = "labelControl1";
+            this.tablePanel1.SetRow(this.labelControl1, 0);
+            this.labelControl1.Size = new System.Drawing.Size(690, 54);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "THÔNG TIN SINH VIÊN";
             // 
             // labelControl3
             // 
@@ -180,16 +192,6 @@ namespace ChamThiSolution.ClientApp.Forms
             this.labelControl6.TabIndex = 3;
             this.labelControl6.Text = "Phòng thi";
             // 
-            // txtMSSV
-            // 
-            this.tablePanel1.SetColumn(this.txtMSSV, 2);
-            this.txtMSSV.Enabled = false;
-            this.txtMSSV.Location = new System.Drawing.Point(264, 68);
-            this.txtMSSV.Name = "txtMSSV";
-            this.tablePanel1.SetRow(this.txtMSSV, 1);
-            this.txtMSSV.Size = new System.Drawing.Size(168, 20);
-            this.txtMSSV.TabIndex = 4;
-            // 
             // txtHoDem
             // 
             this.tablePanel1.SetColumn(this.txtHoDem, 2);
@@ -230,6 +232,17 @@ namespace ChamThiSolution.ClientApp.Forms
             this.txtPhongThi.Size = new System.Drawing.Size(168, 20);
             this.txtPhongThi.TabIndex = 4;
             // 
+            // btnRefresh
+            // 
+            this.tablePanel1.SetColumn(this.btnRefresh, 3);
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRefresh.Location = new System.Drawing.Point(438, 207);
+            this.btnRefresh.Name = "btnRefresh";
+            this.tablePanel1.SetRow(this.btnRefresh, 5);
+            this.btnRefresh.Size = new System.Drawing.Size(81, 42);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Text = "Refresh";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,8 +257,8 @@ namespace ChamThiSolution.ClientApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMSSV.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoDem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGioiTinh.Properties)).EndInit();
@@ -270,5 +283,6 @@ namespace ChamThiSolution.ClientApp.Forms
         private DevExpress.XtraEditors.TextEdit txtTen;
         private DevExpress.XtraEditors.TextEdit txtGioiTinh;
         private DevExpress.XtraEditors.TextEdit txtPhongThi;
+        private DevExpress.XtraEditors.SimpleButton btnRefresh;
     }
 }

@@ -1,4 +1,4 @@
-namespace ChamThiSolution.Data.Entities
+﻿namespace ChamThiSolution.Data.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -26,6 +26,11 @@ namespace ChamThiSolution.Data.Entities
 
         public int? Port { get; set; }
 
+        /// <summary>
+        /// - 1 : Khởi tạo chờ thi
+        ///   0 : Bắt đầu thi
+        ///   1 : Kết thúc
+        /// </summary>
         public int? Status { get; set; }
 
         public TimeSpan? ThoiGianKetThuc { get; set; }
