@@ -12,6 +12,7 @@ namespace ChamThiSolution.Data.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PhongThi()
         {
+            CauHois = new HashSet<CauHoi>();
             TaiKhoans = new HashSet<TaiKhoan>();
         }
 
@@ -29,11 +30,8 @@ namespace ChamThiSolution.Data.Entities
 
         public TimeSpan? ThoiGianKetThuc { get; set; }
 
-        public TimeSpan? ThoiGianBatDau { get; set; }
-
-        public TimeSpan? ThoiGianThi { get; set; }
-
-        public virtual CauHoi CauHoi { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CauHoi> CauHois { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TaiKhoan> TaiKhoans { get; set; }

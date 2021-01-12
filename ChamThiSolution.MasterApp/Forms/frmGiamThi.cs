@@ -1,5 +1,7 @@
 ﻿using ChamThiSolution.Bussiness.MasterBll;
+using Common;
 using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -12,6 +14,7 @@ namespace ChamThiSolution.MasterApp.Forms
         #region Variable
 
         private GiamThiBll _bus;
+        private string ID;
 
         #endregion
         public frmGiamThi()
@@ -22,6 +25,12 @@ namespace ChamThiSolution.MasterApp.Forms
             bbiEdit.ItemClick += BbiEdit_ItemClick;
             bbiDelete.ItemClick += BbiDelete_ItemClick;
             bbiRefresh.ItemClick += BbiRefresh_ItemClick;
+            gridView.FocusedRowChanged += GridView_FocusedRowChanged;
+        }
+
+        private void GridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            ID = gridView.GetFocusedRowCellValue("MaGiamThi").ToString();
         }
 
         private void BbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
@@ -31,7 +40,24 @@ namespace ChamThiSolution.MasterApp.Forms
 
         private void BbiDelete_ItemClick(object sender, ItemClickEventArgs e)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(ID))
+            {
+                return;
+            }
+
+            if (XtraMessageBox.Show("Bạn có chắc muốn xóa", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                var data = _bus.DeleteGiamThi(ID);
+                if (data > 0)
+                {
+                    UICommon.ShowMsgInfoString("Xóa thành công");
+                    LoadData();
+                }
+                else
+                    UICommon.ShowMsgErrorString("Xóa thất bại");
+            }
+            else
+                return;
         }
 
         private void BbiEdit_ItemClick(object sender, ItemClickEventArgs e)

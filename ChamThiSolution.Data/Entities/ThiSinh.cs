@@ -20,11 +20,11 @@ namespace ChamThiSolution.Data.Entities
         [StringLength(50)]
         public string MaThiSinh { get; set; }
 
-        [StringLength(255)]
-        public string TenThiSinh { get; set; }
+        [StringLength(50)]
+        public string HoDem { get; set; }
 
         [StringLength(255)]
-        public string HoDem { get; set; }
+        public string TenThiSinh { get; set; }
 
         public int? GioiTinh { get; set; }
 

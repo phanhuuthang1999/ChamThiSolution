@@ -22,6 +22,10 @@ namespace ChamThiSolution.Data.Entities
         [Column(TypeName = "image")]
         public byte[] HinhAnh { get; set; }
 
+        public int? IDPhongThi { get; set; }
+
+        public int? IDTestCase { get; set; }
+
         public virtual PhongThi PhongThi { get; set; }
 
         public virtual TestCase TestCase { get; set; }

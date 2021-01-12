@@ -16,7 +16,7 @@ namespace ChamThiSolution.Bussiness.Bll
             //isTrue?
             if (!string.IsNullOrEmpty(Answer))
             {
-                query = query.Where(x => x.tc_kq.isTrue.Equals(Answer.Equals(x.tc.Output)));
+                query = query.Where(x => x.tc_kq.IsTrue.Equals(Answer.Equals(x.tc.OutPut)));
             };
 
             return Context.KetQuas.Where(t => t.DiemThi.Equals(1)).Count();

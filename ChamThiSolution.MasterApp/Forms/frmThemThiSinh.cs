@@ -4,30 +4,36 @@ using Common;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using static ChamThiSolution.Data.Entities.StructEnum;
 
 namespace ChamThiSolution.MasterApp.Forms
 {
-    public partial class frmThemGiamThi : DevExpress.XtraEditors.XtraForm
+    public partial class frmThemThiSinh : DevExpress.XtraEditors.XtraForm
     {
         #region Variable
 
-        private GiamThiBll _bus;
+        private ThiSinhBll _bus;
         private string Id;
 
         #endregion
 
         #region Constructor
 
-        public frmThemGiamThi()
+        public frmThemThiSinh()
         {
             InitializeComponent();
-            _bus = new GiamThiBll();
+            _bus = new ThiSinhBll();
             btnSave.Click += BtnSave_Click;
             btnCancel.Click += BtnCancel_Click;
             //LoadData(Id, txtMa.Text, txtTen.Text, txtNoiDung.Text);
-            Load += FrmThemGiamThi_Load;
+            Load += FrmThemThiSinh_Load;
         }
 
         //public void LoadData(string s, string s1, string s2, string s3)
@@ -46,13 +52,13 @@ namespace ChamThiSolution.MasterApp.Forms
         {
             base.OnShown(e);
             SetData();
-            if (GiamThi != null)
+            if (ThiSinh != null)
             {
-                if (GiamThi.Id == 0)
+                if (ThiSinh.Id == 0)
                 {
-                    this.Text = "SAO CHÉP GIÁM THỊ";
+                    this.Text = "SAO CHÉP THÍ SINH";
                 }
-                this.Text = "CẬP NHẬT GIÁM THỊ";
+                this.Text = "CẬP NHẬT THÍ SINH";
             }
 
         }
@@ -63,34 +69,34 @@ namespace ChamThiSolution.MasterApp.Forms
 
         private void SetData()
         {
-            if (GiamThi == null)
+            if (ThiSinh == null)
             {
                 return;
             }
-            txtMa.Text = GiamThi.MaGiamThi;
-            txtHoDem.Text = GiamThi.HoDem;
-            txtTen.Text = GiamThi.TenGiamThi;
-            lookUpEdit1.EditValue = GiamThi.GioiTinh;
-           // txtHinhAnh.Text = GiamThi.HinhAnh;
+            txtMa.Text = ThiSinh.MaThiSinh;
+            txtHoDem.Text = ThiSinh.HoDem;
+            txtTen.Text = ThiSinh.TenThiSinh;
+            lookUpEdit1.EditValue = ThiSinh.GioiTinh;
+            // txtHinhAnh.Text = ThiSinh.HinhAnh;
         }
 
         private void GetData()
         {
-            if (GiamThi == null)
+            if (ThiSinh == null)
             {
-                GiamThi = new GiamThi();
+                ThiSinh = new ThiSinh();
             }
-            GiamThi.MaGiamThi = txtMa.Text;
-            GiamThi.HoDem = txtHoDem.Text;
-            GiamThi.TenGiamThi = txtTen.Text;
-           // GiamThi.GioiTinh = lookUpEdit1.EditValue.ToString();
+            ThiSinh.MaThiSinh = txtMa.Text;
+            ThiSinh.HoDem = txtHoDem.Text;
+            ThiSinh.TenThiSinh = txtTen.Text;
+            // ThiSinh.GioiTinh = lookUpEdit1.EditValue.ToString();
             //CauHoi.HinhAnh = null;
         }
 
         #endregion
 
         #region Events
-        private void FrmThemGiamThi_Load(object sender, EventArgs e)
+        private void FrmThemThiSinh_Load(object sender, EventArgs e)
         {
             var lstGioiTinh = new List<GioiTinh>();
             lstGioiTinh.Add(new GioiTinh { Id = (int)EN_GioiTinh.Nam, Ten = EN_GioiTinh.Nam.GetDescription() });
@@ -116,7 +122,7 @@ namespace ChamThiSolution.MasterApp.Forms
         {
             if (string.IsNullOrEmpty(txtMa.Text))
             {
-                XtraMessageBox.Show("Bạn chưa nhập mã giám thị.", "Thông báo!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Bạn chưa nhập mã thí sinh.", "Thông báo!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMa.Focus();
                 return;
             }
@@ -130,14 +136,14 @@ namespace ChamThiSolution.MasterApp.Forms
 
             GetData();
 
-            if (_bus.CheckExistGiamThi(GiamThi))
+            if (_bus.CheckExistThiSinh(ThiSinh))
             {
-                XtraMessageBox.Show("Giám thị đã tồn tại", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Thí sinh đã tồn tại", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMa.Focus();
                 return;
             }
 
-            var data = _bus.SaveGiamThi(GiamThi);
+            var data = _bus.SaveThiSinh(ThiSinh);
 
             if (data > 0)
             {
@@ -157,7 +163,7 @@ namespace ChamThiSolution.MasterApp.Forms
 
         #region Public
 
-        public GiamThi GiamThi { get; set; }
+        public ThiSinh ThiSinh { get; set; }
 
         #endregion
     }

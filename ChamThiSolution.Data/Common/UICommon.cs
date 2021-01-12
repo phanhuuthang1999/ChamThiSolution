@@ -1,6 +1,6 @@
-﻿using DevExpress.Utils.CommonDialogs.Internal;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 using DialogResult = System.Windows.Forms.DialogResult;
 
@@ -9,6 +9,14 @@ namespace Common
     public static class UICommon
     {
         public enum ModeForm { ThemMoi, CapNhat, SaoChep, Xem };
+
+        public enum EN_GioiTinh
+        {
+            [Description("Nam")]
+            Nam = 1,
+            [Description("Nữ")]
+            Nu = 0
+        }
 
         public static string GetDescription(this Enum val)
         {

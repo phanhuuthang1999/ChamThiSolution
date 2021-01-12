@@ -79,7 +79,6 @@
     <Compile Include="Entities\GiamThi.cs" />
     <Compile Include="Entities\KetQua.cs" />
     <Compile Include="Entities\PhongThi.cs" />
-    <Compile Include="Entities\sysdiagram.cs" />
     <Compile Include="Entities\TaiKhoan.cs" />
     <Compile Include="Entities\TC_KQ.cs" />
     <Compile Include="Entities\TestCase.cs" />
@@ -94,6 +93,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

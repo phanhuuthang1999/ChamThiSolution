@@ -34,7 +34,7 @@ namespace ChamThiSolution.Bussiness.MasterBll
             return Context.TaiKhoans.Any(n => n.TenDangNhap.Equals(pTaiKhoans.TenDangNhap) && n.Id != pTaiKhoans.Id);
         }
 
-        public int AddTaiKhoans(TaiKhoan pTaiKhoans)
+        public int SaveTaiKhoan(TaiKhoan pTaiKhoans)
         {
             var TaiKhoans = Context.TaiKhoans.FirstOrDefault(p => p.Id.Equals(pTaiKhoans.Id));
             if (TaiKhoans == null)

@@ -20,7 +20,7 @@ namespace ChamThiSolution.Bussiness.MasterBll
 
         public bool CheckExistQuestion(CauHoi pCauHoi)
         {
-            return Context.CauHois.Any(p => p.MaCauHoi == pCauHoi.MaCauHoi);
+            return Context.CauHois.Any(p => p.MaCauHoi == pCauHoi.MaCauHoi && p.Id != pCauHoi.Id);
         }
 
         public int SaveQuestion(CauHoi pCauHoi)
@@ -41,9 +41,9 @@ namespace ChamThiSolution.Bussiness.MasterBll
             return Context.SaveChanges();
         }
 
-        public int DeleteCauHoi(CauHoi pCauHoi)
+        public int DeleteCauHoi(string pCauHoi)
         {
-            var CauHoi = Context.CauHois.FirstOrDefault(p => p.MaCauHoi == pCauHoi.MaCauHoi);
+            var CauHoi = Context.CauHois.FirstOrDefault(p => p.MaCauHoi == pCauHoi);
             Context.CauHois.Remove(CauHoi);
 
             return Context.SaveChanges();

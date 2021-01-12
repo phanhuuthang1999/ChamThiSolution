@@ -21,6 +21,8 @@ namespace ChamThiSolution.Data.Entities
 
         public bool? IsActive { get; set; }
 
+        public bool? IsHienDien { get; set; }
+
         public int? IDGiamThi { get; set; }
 
         public int? IDThiSinh { get; set; }

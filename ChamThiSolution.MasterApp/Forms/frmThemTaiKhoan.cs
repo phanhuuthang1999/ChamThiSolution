@@ -1,33 +1,37 @@
 ﻿using ChamThiSolution.Bussiness.MasterBll;
 using ChamThiSolution.Data.Entities;
-using Common;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using static ChamThiSolution.Data.Entities.StructEnum;
 
 namespace ChamThiSolution.MasterApp.Forms
 {
-    public partial class frmThemGiamThi : DevExpress.XtraEditors.XtraForm
+    public partial class frmThemTaiKhoan : DevExpress.XtraEditors.XtraForm
     {
         #region Variable
 
-        private GiamThiBll _bus;
+        private TaiKhoanBll _bus;
         private string Id;
 
         #endregion
 
         #region Constructor
 
-        public frmThemGiamThi()
+        public frmThemTaiKhoan()
         {
             InitializeComponent();
-            _bus = new GiamThiBll();
+            _bus = new TaiKhoanBll();
             btnSave.Click += BtnSave_Click;
             btnCancel.Click += BtnCancel_Click;
             //LoadData(Id, txtMa.Text, txtTen.Text, txtNoiDung.Text);
-            Load += FrmThemGiamThi_Load;
+          //  Load += FrmThemTaiKhoan_Load;
         }
 
         //public void LoadData(string s, string s1, string s2, string s3)
@@ -46,13 +50,13 @@ namespace ChamThiSolution.MasterApp.Forms
         {
             base.OnShown(e);
             SetData();
-            if (GiamThi != null)
+            if (TaiKhoan != null)
             {
-                if (GiamThi.Id == 0)
+                if (TaiKhoan.Id == 0)
                 {
-                    this.Text = "SAO CHÉP GIÁM THỊ";
+                    this.Text = "SAO CHÉP THÍ SINH";
                 }
-                this.Text = "CẬP NHẬT GIÁM THỊ";
+                this.Text = "CẬP NHẬT THÍ SINH";
             }
 
         }
@@ -63,44 +67,44 @@ namespace ChamThiSolution.MasterApp.Forms
 
         private void SetData()
         {
-            if (GiamThi == null)
-            {
-                return;
-            }
-            txtMa.Text = GiamThi.MaGiamThi;
-            txtHoDem.Text = GiamThi.HoDem;
-            txtTen.Text = GiamThi.TenGiamThi;
-            lookUpEdit1.EditValue = GiamThi.GioiTinh;
-           // txtHinhAnh.Text = GiamThi.HinhAnh;
+            //if (TaiKhoan == null)
+            //{
+            //    return;
+            //}
+            //txtMa.Text = TaiKhoan.MaTaiKhoan;
+            //txtHoDem.Text = TaiKhoan.HoDem;
+            //txtTen.Text = TaiKhoan.TenTaiKhoan;
+            //lookUpEdit1.EditValue = TaiKhoan.GioiTinh;
+            //// txtHinhAnh.Text = TaiKhoan.HinhAnh;
         }
 
         private void GetData()
         {
-            if (GiamThi == null)
-            {
-                GiamThi = new GiamThi();
-            }
-            GiamThi.MaGiamThi = txtMa.Text;
-            GiamThi.HoDem = txtHoDem.Text;
-            GiamThi.TenGiamThi = txtTen.Text;
-           // GiamThi.GioiTinh = lookUpEdit1.EditValue.ToString();
+            //if (TaiKhoan == null)
+            //{
+            //    TaiKhoan = new TaiKhoan();
+            //}
+            //TaiKhoan.MaTaiKhoan = txtMa.Text;
+            //TaiKhoan.HoDem = txtHoDem.Text;
+            //TaiKhoan.TenTaiKhoan = txtTen.Text;
+            // TaiKhoan.GioiTinh = lookUpEdit1.EditValue.ToString();
             //CauHoi.HinhAnh = null;
         }
 
         #endregion
 
         #region Events
-        private void FrmThemGiamThi_Load(object sender, EventArgs e)
-        {
-            var lstGioiTinh = new List<GioiTinh>();
-            lstGioiTinh.Add(new GioiTinh { Id = (int)EN_GioiTinh.Nam, Ten = EN_GioiTinh.Nam.GetDescription() });
-            lstGioiTinh.Add(new GioiTinh { Id = (int)EN_GioiTinh.Nu, Ten = EN_GioiTinh.Nu.GetDescription() });
+        //private void FrmThemTaiKhoan_Load(object sender, EventArgs e)
+        //{
+        //    var lstGioiTinh = new List<GioiTinh>();
+        //    lstGioiTinh.Add(new GioiTinh { Id = (int)EN_GioiTinh.Nam, Ten = EN_GioiTinh.Nam.GetDescription() });
+        //    lstGioiTinh.Add(new GioiTinh { Id = (int)EN_GioiTinh.Nu, Ten = EN_GioiTinh.Nu.GetDescription() });
 
-            lookUpEdit1.Properties.DataSource = lstGioiTinh;
-            lookUpEdit1.Properties.DisplayMember = "Ten";
-            lookUpEdit1.Properties.ValueMember = "Id";
-            lookUpEdit1.SelectionStart = 1;
-        }
+        //    lookUpEdit1.Properties.DataSource = lstGioiTinh;
+        //    lookUpEdit1.Properties.DisplayMember = "Ten";
+        //    lookUpEdit1.Properties.ValueMember = "Id";
+        //    lookUpEdit1.SelectionStart = 1;
+        //}
 
         private void BtnCancel_Click(object sender, System.EventArgs e)
         {
@@ -116,7 +120,7 @@ namespace ChamThiSolution.MasterApp.Forms
         {
             if (string.IsNullOrEmpty(txtMa.Text))
             {
-                XtraMessageBox.Show("Bạn chưa nhập mã giám thị.", "Thông báo!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Bạn chưa nhập mã thí sinh.", "Thông báo!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMa.Focus();
                 return;
             }
@@ -130,14 +134,14 @@ namespace ChamThiSolution.MasterApp.Forms
 
             GetData();
 
-            if (_bus.CheckExistGiamThi(GiamThi))
+            if (_bus.CheckExist(TaiKhoan))
             {
-                XtraMessageBox.Show("Giám thị đã tồn tại", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Tài khoản đã tồn tại", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMa.Focus();
                 return;
             }
 
-            var data = _bus.SaveGiamThi(GiamThi);
+            var data = _bus.SaveTaiKhoan(TaiKhoan);
 
             if (data > 0)
             {
@@ -157,7 +161,7 @@ namespace ChamThiSolution.MasterApp.Forms
 
         #region Public
 
-        public GiamThi GiamThi { get; set; }
+        public TaiKhoan TaiKhoan { get; set; }
 
         #endregion
     }

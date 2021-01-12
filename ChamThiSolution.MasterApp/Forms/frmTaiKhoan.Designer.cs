@@ -54,7 +54,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.gridControl.MainView = this.gridView;
             this.gridControl.MenuManager = this.ribbonControl;
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(1090, 407);
+            this.gridControl.Size = new System.Drawing.Size(1117, 501);
             this.gridControl.TabIndex = 2;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -72,13 +72,13 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
+            this.ribbonControl.SearchEditItem,
             this.bbiPrintPreview,
             this.bsiRecordsCount,
             this.bbiNew,
             this.bbiEdit,
             this.bbiDelete,
-            this.bbiRefresh,
-            this.ribbonControl.SearchEditItem});
+            this.bbiRefresh});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.MaxItemId = 20;
             this.ribbonControl.Name = "ribbonControl";
@@ -86,7 +86,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPage1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1090, 158);
+            this.ribbonControl.Size = new System.Drawing.Size(1117, 158);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -163,16 +163,16 @@ namespace ChamThiSolution.MasterApp.Forms
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 541);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 635);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1090, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1117, 24);
             // 
             // frmTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1090, 565);
+            this.ClientSize = new System.Drawing.Size(1117, 659);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.gridControl);
             this.Controls.Add(this.ribbonControl);

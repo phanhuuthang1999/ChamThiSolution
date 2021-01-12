@@ -1,7 +1,7 @@
 ﻿
 namespace ChamThiSolution.MasterApp.Forms
 {
-    partial class frmThemGiamThi
+    partial class frmThemTaiKhoan
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,8 @@ namespace ChamThiSolution.MasterApp.Forms
         private void InitializeComponent()
         {
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.txtHinhAnh = new DevExpress.XtraEditors.TextEdit();
             this.txtMa = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
@@ -40,15 +42,13 @@ namespace ChamThiSolution.MasterApp.Forms
             this.txtHoDem = new DevExpress.XtraEditors.TextEdit();
             this.txtTen = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txtHinhAnh = new DevExpress.XtraEditors.TextEdit();
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHinhAnh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoDem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHinhAnh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -81,18 +81,41 @@ namespace ChamThiSolution.MasterApp.Forms
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(377, 194);
-            this.tablePanel1.TabIndex = 1;
+            this.tablePanel1.Size = new System.Drawing.Size(424, 191);
+            this.tablePanel1.TabIndex = 3;
+            // 
+            // lookUpEdit1
+            // 
+            this.tablePanel1.SetColumn(this.lookUpEdit1, 1);
+            this.tablePanel1.SetColumnSpan(this.lookUpEdit1, 3);
+            this.lookUpEdit1.Location = new System.Drawing.Point(105, 107);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tablePanel1.SetRow(this.lookUpEdit1, 4);
+            this.lookUpEdit1.Size = new System.Drawing.Size(316, 20);
+            this.lookUpEdit1.TabIndex = 4;
+            // 
+            // txtHinhAnh
+            // 
+            this.tablePanel1.SetColumn(this.txtHinhAnh, 1);
+            this.tablePanel1.SetColumnSpan(this.txtHinhAnh, 3);
+            this.txtHinhAnh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtHinhAnh.Location = new System.Drawing.Point(105, 133);
+            this.txtHinhAnh.Name = "txtHinhAnh";
+            this.tablePanel1.SetRow(this.txtHinhAnh, 5);
+            this.txtHinhAnh.Size = new System.Drawing.Size(316, 20);
+            this.txtHinhAnh.TabIndex = 3;
             // 
             // txtMa
             // 
             this.tablePanel1.SetColumn(this.txtMa, 1);
             this.tablePanel1.SetColumnSpan(this.txtMa, 3);
             this.txtMa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMa.Location = new System.Drawing.Point(94, 29);
+            this.txtMa.Location = new System.Drawing.Point(105, 29);
             this.txtMa.Name = "txtMa";
             this.tablePanel1.SetRow(this.txtMa, 1);
-            this.txtMa.Size = new System.Drawing.Size(280, 20);
+            this.txtMa.Size = new System.Drawing.Size(316, 20);
             this.txtMa.TabIndex = 2;
             // 
             // labelControl1
@@ -101,27 +124,27 @@ namespace ChamThiSolution.MasterApp.Forms
             this.labelControl1.Location = new System.Drawing.Point(3, 58);
             this.labelControl1.Name = "labelControl1";
             this.tablePanel1.SetRow(this.labelControl1, 2);
-            this.labelControl1.Size = new System.Drawing.Size(36, 13);
+            this.labelControl1.Size = new System.Drawing.Size(44, 13);
             this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Họ đệm";
+            this.labelControl1.Text = "Mật khẩu";
             // 
             // btnCancel
             // 
             this.tablePanel1.SetColumn(this.btnCancel, 3);
-            this.btnCancel.Location = new System.Drawing.Point(284, 159);
+            this.btnCancel.Location = new System.Drawing.Point(319, 159);
             this.btnCancel.Name = "btnCancel";
             this.tablePanel1.SetRow(this.btnCancel, 6);
-            this.btnCancel.Size = new System.Drawing.Size(90, 32);
+            this.btnCancel.Size = new System.Drawing.Size(102, 29);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Hủy";
             // 
             // btnSave
             // 
             this.tablePanel1.SetColumn(this.btnSave, 2);
-            this.btnSave.Location = new System.Drawing.Point(185, 159);
+            this.btnSave.Location = new System.Drawing.Point(207, 159);
             this.btnSave.Name = "btnSave";
             this.tablePanel1.SetRow(this.btnSave, 6);
-            this.btnSave.Size = new System.Drawing.Size(94, 32);
+            this.btnSave.Size = new System.Drawing.Size(106, 29);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Lưu";
             // 
@@ -131,9 +154,9 @@ namespace ChamThiSolution.MasterApp.Forms
             this.labelControl2.Location = new System.Drawing.Point(3, 84);
             this.labelControl2.Name = "labelControl2";
             this.tablePanel1.SetRow(this.labelControl2, 3);
-            this.labelControl2.Size = new System.Drawing.Size(58, 13);
+            this.labelControl2.Size = new System.Drawing.Size(32, 13);
             this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "Tên giám thị";
+            this.labelControl2.Text = "Quyền";
             // 
             // labelControl3
             // 
@@ -151,19 +174,19 @@ namespace ChamThiSolution.MasterApp.Forms
             this.labelControl4.Location = new System.Drawing.Point(3, 32);
             this.labelControl4.Name = "labelControl4";
             this.tablePanel1.SetRow(this.labelControl4, 1);
-            this.labelControl4.Size = new System.Drawing.Size(54, 13);
+            this.labelControl4.Size = new System.Drawing.Size(72, 13);
             this.labelControl4.TabIndex = 1;
-            this.labelControl4.Text = "Mã giám thị";
+            this.labelControl4.Text = "Tên đăng nhập";
             // 
             // txtHoDem
             // 
             this.tablePanel1.SetColumn(this.txtHoDem, 1);
             this.tablePanel1.SetColumnSpan(this.txtHoDem, 3);
             this.txtHoDem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtHoDem.Location = new System.Drawing.Point(94, 55);
+            this.txtHoDem.Location = new System.Drawing.Point(105, 55);
             this.txtHoDem.Name = "txtHoDem";
             this.tablePanel1.SetRow(this.txtHoDem, 2);
-            this.txtHoDem.Size = new System.Drawing.Size(280, 20);
+            this.txtHoDem.Size = new System.Drawing.Size(316, 20);
             this.txtHoDem.TabIndex = 2;
             // 
             // txtTen
@@ -171,10 +194,10 @@ namespace ChamThiSolution.MasterApp.Forms
             this.tablePanel1.SetColumn(this.txtTen, 1);
             this.tablePanel1.SetColumnSpan(this.txtTen, 3);
             this.txtTen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTen.Location = new System.Drawing.Point(94, 81);
+            this.txtTen.Location = new System.Drawing.Point(105, 81);
             this.txtTen.Name = "txtTen";
             this.tablePanel1.SetRow(this.txtTen, 3);
-            this.txtTen.Size = new System.Drawing.Size(280, 20);
+            this.txtTen.Size = new System.Drawing.Size(316, 20);
             this.txtTen.TabIndex = 2;
             // 
             // labelControl5
@@ -187,47 +210,24 @@ namespace ChamThiSolution.MasterApp.Forms
             this.labelControl5.TabIndex = 1;
             this.labelControl5.Text = "Hình ảnh";
             // 
-            // txtHinhAnh
-            // 
-            this.tablePanel1.SetColumn(this.txtHinhAnh, 1);
-            this.tablePanel1.SetColumnSpan(this.txtHinhAnh, 3);
-            this.txtHinhAnh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtHinhAnh.Location = new System.Drawing.Point(94, 133);
-            this.txtHinhAnh.Name = "txtHinhAnh";
-            this.tablePanel1.SetRow(this.txtHinhAnh, 5);
-            this.txtHinhAnh.Size = new System.Drawing.Size(280, 20);
-            this.txtHinhAnh.TabIndex = 3;
-            // 
-            // lookUpEdit1
-            // 
-            this.tablePanel1.SetColumn(this.lookUpEdit1, 1);
-            this.tablePanel1.SetColumnSpan(this.lookUpEdit1, 3);
-            this.lookUpEdit1.Location = new System.Drawing.Point(94, 107);
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.tablePanel1.SetRow(this.lookUpEdit1, 4);
-            this.lookUpEdit1.Size = new System.Drawing.Size(280, 20);
-            this.lookUpEdit1.TabIndex = 4;
-            // 
-            // frmThemGiamThi
+            // frmThemTaiKhoan
             // 
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 194);
+            this.ClientSize = new System.Drawing.Size(424, 191);
             this.Controls.Add(this.tablePanel1);
-            this.Name = "frmThemGiamThi";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "THÊM MỚI GIÁM THỊ";
+            this.Name = "frmThemTaiKhoan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "THÊM MỚI TÀI KHOẢN";
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHinhAnh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoDem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHinhAnh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -235,6 +235,8 @@ namespace ChamThiSolution.MasterApp.Forms
         #endregion
 
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.XtraEditors.TextEdit txtHinhAnh;
         private DevExpress.XtraEditors.TextEdit txtMa;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
@@ -244,8 +246,6 @@ namespace ChamThiSolution.MasterApp.Forms
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txtHoDem;
         private DevExpress.XtraEditors.TextEdit txtTen;
-        private DevExpress.XtraEditors.TextEdit txtHinhAnh;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
     }
 }

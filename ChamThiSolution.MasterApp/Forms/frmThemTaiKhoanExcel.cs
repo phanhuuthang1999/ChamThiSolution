@@ -1,17 +1,18 @@
 ﻿using Microsoft.Office.Interop.Excel;
-using System.Runtime.InteropServices;
 using System;
 using System.Windows.Forms;
 using Application = Microsoft.Office.Interop.Excel.Application;
-using System.Data.OleDb;
 using ChamThiSolution.Data.Entities;
-using System.Collections.Generic;
+using ChamThiSolution.Bussiness.MasterBll;
+using DevExpress.XtraEditors;
 
 namespace ChamThiSolution.MasterApp.Forms
 {
     public partial class frmThemTaiKhoanExcel : DevExpress.XtraEditors.XtraForm
     {
         #region Variable
+
+        private TaiKhoanBll _bus;
 
         #endregion
 
@@ -20,8 +21,10 @@ namespace ChamThiSolution.MasterApp.Forms
         public frmThemTaiKhoanExcel()
         {
             InitializeComponent();
+            _bus = new TaiKhoanBll();
 
             btnLink.Click += BtnLink_Click;
+            btnImport.Click += BtnImport_Click;
             backgroundWorker1.DoWork += BackgroundWorker1_DoWork;
             backgroundWorker1.ProgressChanged += BackgroundWorker1_ProgressChanged;
         }
@@ -71,6 +74,23 @@ namespace ChamThiSolution.MasterApp.Forms
             if (choofdlog.ShowDialog() == DialogResult.OK)
             {
                 btnLink.Text = choofdlog.FileName;
+            }
+        }
+
+        private void BtnImport_Click(object sender, EventArgs e)
+        {
+            var data = _bus.SaveTaiKhoan(TaiKhoan);
+
+            if (data > 0)
+            {
+                this.DialogResult = DialogResult.OK;
+                Close();
+            }
+
+            else
+            {
+                XtraMessageBox.Show("Lưu thất bại", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
         }
 

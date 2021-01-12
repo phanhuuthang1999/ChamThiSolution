@@ -1,10 +1,9 @@
-using ChamThiSolution.Data.Entities;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace ChamThiSolution.Data.EF
+namespace ChamThiSolution.Data.Entities
 {
     public partial class ChamThiDbContext : DbContext
     {
@@ -17,7 +16,6 @@ namespace ChamThiSolution.Data.EF
         public virtual DbSet<GiamThi> GiamThis { get; set; }
         public virtual DbSet<KetQua> KetQuas { get; set; }
         public virtual DbSet<PhongThi> PhongThis { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         public virtual DbSet<TC_KQ> TC_KQ { get; set; }
         public virtual DbSet<TestCase> TestCases { get; set; }
@@ -43,26 +41,28 @@ namespace ChamThiSolution.Data.EF
                 .WithOptional(e => e.KetQua)
                 .HasForeignKey(e => e.IDKetQua);
 
-            modelBuilder.Entity<KetQua>()
-                .HasOptional(e => e.TC_KQ)
-                .WithRequired(e => e.KetQua);
-
             modelBuilder.Entity<PhongThi>()
                 .Property(e => e.MaPhongThi)
                 .IsUnicode(false);
 
             modelBuilder.Entity<PhongThi>()
-                .HasOptional(e => e.CauHoi)
-                .WithRequired(e => e.PhongThi);
+                .HasMany(e => e.CauHois)
+                .WithOptional(e => e.PhongThi)
+                .HasForeignKey(e => e.IDPhongThi);
 
             modelBuilder.Entity<PhongThi>()
                 .HasMany(e => e.TaiKhoans)
                 .WithOptional(e => e.PhongThi)
                 .HasForeignKey(e => e.IDPhongThi);
 
+            modelBuilder.Entity<TC_KQ>()
+                .HasOptional(e => e.KetQua)
+                .WithRequired(e => e.TC_KQ);
+
             modelBuilder.Entity<TestCase>()
-                .HasOptional(e => e.CauHoi)
-                .WithRequired(e => e.TestCase);
+                .HasMany(e => e.CauHois)
+                .WithOptional(e => e.TestCase)
+                .HasForeignKey(e => e.IDTestCase);
 
             modelBuilder.Entity<TestCase>()
                 .HasOptional(e => e.TC_KQ)

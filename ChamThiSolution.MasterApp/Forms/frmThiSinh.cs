@@ -1,5 +1,8 @@
 ﻿using ChamThiSolution.Bussiness.MasterBll;
+using ChamThiSolution.Data.Entities;
+using Common;
 using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
 using System;
 using System.Windows.Forms;
 
@@ -10,6 +13,7 @@ namespace ChamThiSolution.MasterApp.Forms
         #region Variable
 
         private ThiSinhBll _bus;
+        private string ID;
 
         #endregion
         public frmThiSinh()
@@ -20,6 +24,12 @@ namespace ChamThiSolution.MasterApp.Forms
             bbiEdit.ItemClick += BbiEdit_ItemClick;
             bbiDelete.ItemClick += BbiDelete_ItemClick;
             bbiRefresh.ItemClick += BbiRefresh_ItemClick;
+            gridView.FocusedRowChanged += GridView_FocusedRowChanged;
+        }
+
+        private void GridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            ID = gridView.GetFocusedRowCellValue("Id").ToString();
         }
 
         private void BbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
@@ -29,7 +39,24 @@ namespace ChamThiSolution.MasterApp.Forms
 
         private void BbiDelete_ItemClick(object sender, ItemClickEventArgs e)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(ID))
+            {
+                return;
+            }
+
+            if (XtraMessageBox.Show("Bạn có chắc muốn xóa", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                var data = _bus.DeleteThiSinh(ID);
+                if (data > 0)
+                {
+                    UICommon.ShowMsgInfoString("Xóa thành công");
+                    LoadData();
+                }
+                else
+                    UICommon.ShowMsgErrorString("Xóa thất bại");
+            }
+            else
+                return;
         }
 
         private void BbiEdit_ItemClick(object sender, ItemClickEventArgs e)
@@ -39,7 +66,7 @@ namespace ChamThiSolution.MasterApp.Forms
 
         private void BbiNew_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmThemGiamThi frm = new frmThemGiamThi();
+            frmThemThiSinh frm = new frmThemThiSinh();
             if (frm.ShowDialog() == DialogResult.Yes)
             {
                 LoadData();
@@ -61,5 +88,11 @@ namespace ChamThiSolution.MasterApp.Forms
         {
             gridControl.ShowRibbonPrintPreview();
         }
+
+        #region Public
+
+        public ThiSinh ThiSinh { get; set; }
+
+        #endregion
     }
 }

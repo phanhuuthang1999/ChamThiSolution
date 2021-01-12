@@ -106,11 +106,23 @@
     <Compile Include="Forms\frmThemPhongThi.Designer.cs">
       <DependentUpon>frmThemPhongThi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmThemTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmThemTaiKhoan.Designer.cs">
+      <DependentUpon>frmThemTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmThemTaiKhoanExcel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmThemTaiKhoanExcel.designer.cs">
       <DependentUpon>frmThemTaiKhoanExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmThemThiSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmThemThiSinh.Designer.cs">
+      <DependentUpon>frmThemThiSinh.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\WaitForm1.cs">
       <SubType>Form</SubType>
@@ -180,8 +192,14 @@
     <EmbeddedResource Include="Forms\frmThemPhongThi.resx">
       <DependentUpon>frmThemPhongThi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmThemTaiKhoan.resx">
+      <DependentUpon>frmThemTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmThemTaiKhoanExcel.resx">
       <DependentUpon>frmThemTaiKhoanExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmThemThiSinh.resx">
+      <DependentUpon>frmThemThiSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmThiSinh.resx">
       <DependentUpon>frmThiSinh.cs</DependentUpon>

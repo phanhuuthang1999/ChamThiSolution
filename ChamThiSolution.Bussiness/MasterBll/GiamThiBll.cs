@@ -41,9 +41,9 @@ namespace ChamThiSolution.Bussiness.MasterBll
             return Context.SaveChanges();
         }
 
-        public int DeleteGiamThi(GiamThi pGiamThi)
+        public int DeleteGiamThi(string pGiamThi)
         {
-            var GiamThi = Context.GiamThis.FirstOrDefault(p => p.MaGiamThi == pGiamThi.MaGiamThi);
+            var GiamThi = Context.GiamThis.FirstOrDefault(p => p.MaGiamThi == pGiamThi);
             Context.GiamThis.Remove(GiamThi);
 
             return Context.SaveChanges();

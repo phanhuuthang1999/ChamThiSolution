@@ -31,6 +31,10 @@ namespace ChamThiSolution.MasterApp.Forms
         {
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MaCauHoi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenCauHoi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NoiDungCauHoi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HinhAnh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
@@ -42,6 +46,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
@@ -62,23 +67,61 @@ namespace ChamThiSolution.MasterApp.Forms
             // gridView
             // 
             this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.MaCauHoi,
+            this.TenCauHoi,
+            this.NoiDungCauHoi,
+            this.HinhAnh});
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;
             this.gridView.OptionsBehavior.ReadOnly = true;
+            // 
+            // MaCauHoi
+            // 
+            this.MaCauHoi.Caption = "Mã Câu Hỏi";
+            this.MaCauHoi.FieldName = "MaCauHoi";
+            this.MaCauHoi.Name = "MaCauHoi";
+            this.MaCauHoi.Visible = true;
+            this.MaCauHoi.VisibleIndex = 1;
+            // 
+            // TenCauHoi
+            // 
+            this.TenCauHoi.Caption = "Tên câu hỏi";
+            this.TenCauHoi.FieldName = "TenCauHoi";
+            this.TenCauHoi.Name = "TenCauHoi";
+            this.TenCauHoi.Visible = true;
+            this.TenCauHoi.VisibleIndex = 2;
+            // 
+            // NoiDungCauHoi
+            // 
+            this.NoiDungCauHoi.Caption = "Nội dung câu hỏi";
+            this.NoiDungCauHoi.FieldName = "NoiDungCauHoi";
+            this.NoiDungCauHoi.Name = "NoiDungCauHoi";
+            this.NoiDungCauHoi.Visible = true;
+            this.NoiDungCauHoi.VisibleIndex = 3;
+            // 
+            // HinhAnh
+            // 
+            this.HinhAnh.Caption = "Hình Ảnh";
+            this.HinhAnh.FieldName = "HinhAnh";
+            this.HinhAnh.Name = "HinhAnh";
+            this.HinhAnh.Visible = true;
+            this.HinhAnh.VisibleIndex = 4;
             // 
             // ribbonControl
             // 
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
+            this.ribbonControl.SearchEditItem,
             this.bbiPrintPreview,
             this.bsiRecordsCount,
             this.bbiNew,
             this.bbiEdit,
             this.bbiDelete,
-            this.bbiRefresh,
-            this.ribbonControl.SearchEditItem});
+            this.bbiRefresh});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.MaxItemId = 20;
             this.ribbonControl.Name = "ribbonControl";
@@ -168,6 +211,14 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1147, 24);
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Id";
+            this.gridColumn1.FieldName = "Id";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
             // frmCauHoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,5 +253,10 @@ namespace ChamThiSolution.MasterApp.Forms
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
+        private DevExpress.XtraGrid.Columns.GridColumn MaCauHoi;
+        private DevExpress.XtraGrid.Columns.GridColumn TenCauHoi;
+        private DevExpress.XtraGrid.Columns.GridColumn NoiDungCauHoi;
+        private DevExpress.XtraGrid.Columns.GridColumn HinhAnh;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

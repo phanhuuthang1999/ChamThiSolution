@@ -1,5 +1,8 @@
 ﻿using ChamThiSolution.Bussiness.MasterBll;
+using ChamThiSolution.Data.Entities;
+using Common;
 using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
 using System;
 using System.Windows.Forms;
 
@@ -10,6 +13,10 @@ namespace ChamThiSolution.MasterApp.Forms
         #region Variable
 
         private CauHoiBll _bus;
+        private string ID;
+        private string MaCau;
+        private string TenCau;
+        private string NoiDung;
 
         #endregion
 
@@ -19,10 +26,13 @@ namespace ChamThiSolution.MasterApp.Forms
         {
             InitializeComponent();
             _bus = new CauHoiBll();
+
             bbiNew.ItemClick += BbiNew_ItemClick;
             bbiEdit.ItemClick += BbiEdit_ItemClick;
             bbiDelete.ItemClick += BbiDelete_ItemClick;
             bbiRefresh.ItemClick += BbiRefresh_ItemClick;
+            gridView.FocusedRowChanged += GridView_FocusedRowChanged;
+
         }
 
         #endregion
@@ -48,6 +58,14 @@ namespace ChamThiSolution.MasterApp.Forms
 
         #region Events
 
+        private void GridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            ID = gridView.GetFocusedRowCellValue("Id").ToString();
+            MaCau = gridView.GetFocusedRowCellValue("MaCauHoi").ToString();
+            TenCau = gridView.GetFocusedRowCellValue("TenCauHoi").ToString();
+            NoiDung = gridView.GetFocusedRowCellValue("NoiDungCauHoi").ToString();
+        }
+
         private void BbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
             LoadData();
@@ -55,18 +73,43 @@ namespace ChamThiSolution.MasterApp.Forms
 
         private void BbiDelete_ItemClick(object sender, ItemClickEventArgs e)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(ID))
+            {
+                return;
+            }
+
+            if (XtraMessageBox.Show("Bạn có chắc muốn xóa", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                var data = _bus.DeleteCauHoi(ID);
+                if (data > 0)
+                {
+                    UICommon.ShowMsgInfoString("Xóa thành công");
+                    LoadData();
+                }
+                else
+                    UICommon.ShowMsgErrorString("Xóa thất bại");
+            }
+            else
+                return;
         }
 
         private void BbiEdit_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(ID))
+            {
+                frmThemCauHoi frm = new frmThemCauHoi();
+                frm.LoadData(ID,MaCau,TenCau,NoiDung);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData();
+                } 
+            }
         }
 
         private void BbiNew_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmThemCauHoi frm = new frmThemCauHoi();
-            if (frm.ShowDialog() == DialogResult.Yes)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
                 LoadData();
             }
@@ -76,6 +119,12 @@ namespace ChamThiSolution.MasterApp.Forms
         {
             gridControl.ShowRibbonPrintPreview();
         }
+
+        #endregion
+
+        #region Public 
+
+        public CauHoi CauHoi { get; set; }
 
         #endregion
     }

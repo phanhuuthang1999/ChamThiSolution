@@ -11,6 +11,7 @@ namespace ChamThiSolution.MasterApp.Forms
         #region Variable
 
         private CauHoiBll _bus;
+        private string Id;
 
         #endregion
 
@@ -22,6 +23,15 @@ namespace ChamThiSolution.MasterApp.Forms
             _bus = new CauHoiBll();
             btnSave.Click += BtnSave_Click;
             btnCancel.Click += BtnCancel_Click;
+            LoadData(Id,txtMa.Text,txtTen.Text,txtNoiDung.Text);
+        }
+
+        public void LoadData(string s, string s1, string s2, string s3)
+        {
+            txtMa.Text = s;
+            txtTen.Text = s1;
+            txtNoiDung.Text = s2;
+            Id = s3;
         }
 
         #endregion
@@ -120,6 +130,7 @@ namespace ChamThiSolution.MasterApp.Forms
 
             if (data > 0)
             {
+                this.DialogResult = DialogResult.OK;
                 Close();
             }
 

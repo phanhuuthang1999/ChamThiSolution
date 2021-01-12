@@ -10,7 +10,7 @@ namespace ChamThiSolution.Data.Entities
     {
         public int Id { get; set; }
 
-        public bool? isTrue { get; set; }
+        public bool? IsTrue { get; set; }
 
         public virtual KetQua KetQua { get; set; }
 

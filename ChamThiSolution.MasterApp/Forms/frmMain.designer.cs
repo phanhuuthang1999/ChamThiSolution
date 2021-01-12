@@ -55,8 +55,6 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -105,7 +103,6 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPage1,
             this.ribbonPage2,
             this.ribbonPage3,
-            this.ribbonPage4,
             this.ribbonPage5});
             this.ribbon.Size = new System.Drawing.Size(1143, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
@@ -256,19 +253,6 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Ca Thi";
             // 
-            // ribbonPage4
-            // 
-            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup5});
-            this.ribbonPage4.Name = "ribbonPage4";
-            this.ribbonPage4.Text = "Báo Cáo Thống Kê";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnLop01, true);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Thống Kê";
-            // 
             // ribbonPage5
             // 
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -407,8 +391,6 @@ namespace ChamThiSolution.MasterApp.Forms
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem1;

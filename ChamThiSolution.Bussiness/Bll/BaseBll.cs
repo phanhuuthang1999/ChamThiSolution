@@ -1,4 +1,4 @@
-﻿using ChamThiSolution.Data.EF;
+﻿using ChamThiSolution.Data.Entities;
 
 namespace ChamThiSolution.Bussiness.Bll
 {

@@ -41,9 +41,9 @@ namespace ChamThiSolution.Bussiness.MasterBll
             return Context.SaveChanges();
         }
 
-        public int DeleteThiSinh()
+        public int DeleteThiSinh(string ID)
         {
-            var ThiSinh = Context.ThiSinhs.FirstOrDefault(p => p.MaThiSinh == "1");
+            var ThiSinh = Context.ThiSinhs.FirstOrDefault(p => p.MaThiSinh == ID);
             Context.ThiSinhs.Remove(ThiSinh);
 
             return Context.SaveChanges();

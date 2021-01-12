@@ -21,9 +21,9 @@ namespace ChamThiSolution.Data.Entities
 
         public TimeSpan? ThoiGianKetThuc { get; set; }
 
+        public virtual TC_KQ TC_KQ { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TaiKhoan> TaiKhoans { get; set; }
-
-        public virtual TC_KQ TC_KQ { get; set; }
     }
 }
