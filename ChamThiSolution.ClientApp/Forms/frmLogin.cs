@@ -32,6 +32,7 @@ namespace ChamThiSolution.ClientApp.Forms
             cl = this;
             btnOK.Click += btnDangNhap_Click;
             btnCancel.Click += btnThoat_Click;
+            btnreload.Click += Btnreload_Click;
             twoWaysClientTerminal = new TwoWaysClientTerminal();
         }
 
@@ -64,17 +65,31 @@ namespace ChamThiSolution.ClientApp.Forms
                 }
 
                 Thread.Sleep(500);
-                PhongThiDTO[] phongThiDTO = primeProxy.GetPhongThiChoThiSinh();
-                cbb_maphongthi.DataSource = phongThiDTO;
-                cbb_maphongthi.DisplayMember = "TenPhongThi";
-                cbb_maphongthi.ValueMember = "Id";
-            }
 
+            }
+            LoadPhongThi();
+        }
+
+        #endregion
+
+        #region Private
+
+        private void LoadPhongThi()
+        {
+            PhongThiDTO[] phongThiDTO = primeProxy.GetPhongThiChoThiSinh();
+            cbb_maphongthi.DataSource = phongThiDTO;
+            cbb_maphongthi.DisplayMember = "TenPhongThi";
+            cbb_maphongthi.ValueMember = "Id";
         }
 
         #endregion
 
         #region Event
+
+        private void Btnreload_Click(object sender, EventArgs e)
+        {
+            LoadPhongThi();
+        }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {

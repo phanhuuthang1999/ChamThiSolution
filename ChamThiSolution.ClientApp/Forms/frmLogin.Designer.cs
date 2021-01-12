@@ -29,7 +29,10 @@ namespace ChamThiSolution.ClientApp.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.cbb_maphongthi = new System.Windows.Forms.ComboBox();
             this.ckcMK = new DevExpress.XtraEditors.CheckEdit();
             this.txtMK = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -38,20 +41,21 @@ namespace ChamThiSolution.ClientApp.Forms
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnOK = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.cbb_maphongthi = new System.Windows.Forms.ComboBox();
+            this.btnreload = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ckcMK.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMK.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckcNhoPass.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTK.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnreload.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
             this.groupControl1.Appearance.BackColor = System.Drawing.Color.White;
             this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.Controls.Add(this.btnreload);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.cbb_maphongthi);
             this.groupControl1.Controls.Add(this.ckcMK);
@@ -66,6 +70,23 @@ namespace ChamThiSolution.ClientApp.Forms
             this.groupControl1.Size = new System.Drawing.Size(329, 180);
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "Thông tin đăng nhập";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(39, 125);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(47, 13);
+            this.labelControl3.TabIndex = 9;
+            this.labelControl3.Text = "Phòng Thi";
+            // 
+            // cbb_maphongthi
+            // 
+            this.cbb_maphongthi.FormattingEnabled = true;
+            this.cbb_maphongthi.Location = new System.Drawing.Point(139, 122);
+            this.cbb_maphongthi.Name = "cbb_maphongthi";
+            this.cbb_maphongthi.Size = new System.Drawing.Size(139, 21);
+            this.cbb_maphongthi.TabIndex = 8;
             // 
             // ckcMK
             // 
@@ -140,22 +161,16 @@ namespace ChamThiSolution.ClientApp.Forms
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             // 
-            // labelControl3
+            // btnreload
             // 
-            this.labelControl3.Location = new System.Drawing.Point(39, 125);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(47, 13);
-            this.labelControl3.TabIndex = 9;
-            this.labelControl3.Text = "Phòng Thi";
-            // 
-            // cbb_maphongthi
-            // 
-            this.cbb_maphongthi.FormattingEnabled = true;
-            this.cbb_maphongthi.Location = new System.Drawing.Point(139, 122);
-            this.cbb_maphongthi.Name = "cbb_maphongthi";
-            this.cbb_maphongthi.Size = new System.Drawing.Size(139, 21);
-            this.cbb_maphongthi.TabIndex = 8;
+            this.btnreload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnreload.EditValue = ((object)(resources.GetObject("btnreload.EditValue")));
+            this.btnreload.Location = new System.Drawing.Point(284, 122);
+            this.btnreload.Name = "btnreload";
+            this.btnreload.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.btnreload.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.btnreload.Size = new System.Drawing.Size(27, 23);
+            this.btnreload.TabIndex = 11;
             // 
             // frmLogin
             // 
@@ -176,6 +191,7 @@ namespace ChamThiSolution.ClientApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.txtMK.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckcNhoPass.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTK.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnreload.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,5 +209,6 @@ namespace ChamThiSolution.ClientApp.Forms
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.ComboBox cbb_maphongthi;
+        private DevExpress.XtraEditors.PictureEdit btnreload;
     }
 }
