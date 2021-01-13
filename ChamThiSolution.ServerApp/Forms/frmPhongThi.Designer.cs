@@ -40,12 +40,14 @@ namespace ChamThiSolution.ServerApp.Forms
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -66,7 +68,7 @@ namespace ChamThiSolution.ServerApp.Forms
             this.ribbonPage1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1179, 158);
+            this.ribbonControl.Size = new System.Drawing.Size(1195, 158);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -134,28 +136,49 @@ namespace ChamThiSolution.ServerApp.Forms
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 689);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 701);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1179, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1195, 24);
             // 
             // tablePanel1
             // 
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 150F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 150F)});
+            this.tablePanel1.Controls.Add(this.dataGridView1);
+            this.tablePanel1.Controls.Add(this.flowLayoutPanel1);
             this.tablePanel1.Controls.Add(this.labelControl1);
             this.tablePanel1.Controls.Add(this.labelControl2);
-            this.tablePanel1.Controls.Add(this.labelControl3);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel1.Location = new System.Drawing.Point(0, 158);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(1179, 531);
+            this.tablePanel1.Size = new System.Drawing.Size(1195, 543);
             this.tablePanel1.TabIndex = 2;
+            // 
+            // dataGridView1
+            // 
+            this.tablePanel1.SetColumn(this.dataGridView1, 1);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(302, 29);
+            this.dataGridView1.Name = "dataGridView1";
+            this.tablePanel1.SetRow(this.dataGridView1, 1);
+            this.dataGridView1.Size = new System.Drawing.Size(890, 511);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.tablePanel1.SetColumn(this.flowLayoutPanel1, 0);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 29);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.tablePanel1.SetRow(this.flowLayoutPanel1, 1);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(293, 511);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // labelControl1
             // 
@@ -174,38 +197,30 @@ namespace ChamThiSolution.ServerApp.Forms
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.tablePanel1.SetColumn(this.labelControl2, 1);
-            this.labelControl2.Location = new System.Drawing.Point(239, 5);
+            this.labelControl2.Location = new System.Drawing.Point(302, 5);
             this.labelControl2.Name = "labelControl2";
             this.tablePanel1.SetRow(this.labelControl2, 0);
             this.labelControl2.Size = new System.Drawing.Size(121, 16);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Thông tin sinh viên";
             // 
-            // labelControl3
-            // 
-            this.tablePanel1.SetColumn(this.labelControl3, 2);
-            this.labelControl3.Location = new System.Drawing.Point(946, 6);
-            this.labelControl3.Name = "labelControl3";
-            this.tablePanel1.SetRow(this.labelControl3, 0);
-            this.labelControl3.Size = new System.Drawing.Size(63, 13);
-            this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "labelControl1";
-            // 
             // frmPhongThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 713);
+            this.ClientSize = new System.Drawing.Size(1195, 725);
             this.Controls.Add(this.tablePanel1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbonControl);
             this.Name = "frmPhongThi";
             this.Ribbon = this.ribbonControl;
             this.StatusBar = this.ribbonStatusBar;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,6 +240,7 @@ namespace ChamThiSolution.ServerApp.Forms
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

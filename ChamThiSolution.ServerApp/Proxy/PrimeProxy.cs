@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using Common;
 using ChamThiSolution.Bussiness.Bll;
 using System.Linq;
+using ChamThiSolution.Data.DTO;
 
 namespace ChamThiSolution.ServerApp.Proxy
 {
+    [Serializable]
     public class PrimeProxy : MarshalByRefObject, IPrimeProxy
     {
         #region Variable
@@ -17,6 +19,7 @@ namespace ChamThiSolution.ServerApp.Proxy
         private ChamDiemBll _busKQ = new ChamDiemBll();
         private ThiSinhBll _busTs = new ThiSinhBll();
         private PhongThiBll _busPH = new PhongThiBll();
+        private DeThiBll _busDe = new DeThiBll();
 
         #endregion
 
@@ -34,6 +37,7 @@ namespace ChamThiSolution.ServerApp.Proxy
         public event GetIdPhongThi IdPhongThiReceived;
         public event GetThiSinhPhongThi ThiSinhPhongThiReceived;
         public event GetDeThi DeThiReceived;
+        public event NopBai NopBaiReceived;
 
         #endregion
 
@@ -108,9 +112,19 @@ namespace ChamThiSolution.ServerApp.Proxy
             return true;
         }
 
-        public void GetDeThi()
+        public List<CauHoi> GetDeThi()
+        {
+            return _busDe.GetAllQuestion(null);
+        }
+
+        public void NopBai()
         {
             throw new NotImplementedException();
+        }
+
+        public CauHoiDTO[] GetDeThiChoPhong(string tenPhong)
+        {
+            return _busDe.GetDeThiChoPhong(tenPhong);
         }
 
         #endregion

@@ -112,6 +112,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.tablePanel1.SetColumn(this.txtMa, 1);
             this.tablePanel1.SetColumnSpan(this.txtMa, 3);
             this.txtMa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMa.EnterMoveNextControl = true;
             this.txtMa.Location = new System.Drawing.Point(94, 29);
             this.txtMa.Name = "txtMa";
             this.tablePanel1.SetRow(this.txtMa, 1);
@@ -183,6 +184,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.tablePanel1.SetColumn(this.txtHoDem, 1);
             this.tablePanel1.SetColumnSpan(this.txtHoDem, 3);
             this.txtHoDem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtHoDem.EnterMoveNextControl = true;
             this.txtHoDem.Location = new System.Drawing.Point(94, 55);
             this.txtHoDem.Name = "txtHoDem";
             this.tablePanel1.SetRow(this.txtHoDem, 2);
@@ -194,6 +196,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.tablePanel1.SetColumn(this.txtTen, 1);
             this.tablePanel1.SetColumnSpan(this.txtTen, 3);
             this.txtTen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTen.EnterMoveNextControl = true;
             this.txtTen.Location = new System.Drawing.Point(94, 81);
             this.txtTen.Name = "txtTen";
             this.tablePanel1.SetRow(this.txtTen, 3);

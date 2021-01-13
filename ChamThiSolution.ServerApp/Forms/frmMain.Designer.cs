@@ -29,6 +29,7 @@ namespace ChamThiSolution.Server.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnTaiKhoan = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
@@ -43,7 +44,11 @@ namespace ChamThiSolution.Server.Forms
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -65,7 +70,7 @@ namespace ChamThiSolution.Server.Forms
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage4});
-            this.ribbon.Size = new System.Drawing.Size(1275, 158);
+            this.ribbon.Size = new System.Drawing.Size(945, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnTaiKhoan
@@ -154,10 +159,18 @@ namespace ChamThiSolution.Server.Forms
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.lblChao);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 777);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 561);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1275, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(945, 24);
+            // 
+            // documentManager1
+            // 
+            this.documentManager1.MdiParent = this;
+            this.documentManager1.MenuManager = this.ribbon;
+            this.documentManager1.View = this.tabbedView1;
+            this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
+            this.tabbedView1});
             // 
             // frmMain
             // 
@@ -165,7 +178,7 @@ namespace ChamThiSolution.Server.Forms
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1275, 801);
+            this.ClientSize = new System.Drawing.Size(945, 585);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
@@ -175,6 +188,8 @@ namespace ChamThiSolution.Server.Forms
             this.Text = "PHẦN MỀM QUẢN LÝ CHẤM THI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +211,7 @@ namespace ChamThiSolution.Server.Forms
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem btnGiamThi;
+        private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
+        private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
     }
 }

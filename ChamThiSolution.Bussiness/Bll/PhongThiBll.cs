@@ -46,5 +46,10 @@ namespace ChamThiSolution.Bussiness.Bll
 
             return Context.SaveChanges();
         }
+
+        public bool GetPhongThiMo(int idPhongThi)
+        {
+            return Context.PhongThis.Any(t => t.Status == 1 && t.Id == idPhongThi);
+        }
     }
 }

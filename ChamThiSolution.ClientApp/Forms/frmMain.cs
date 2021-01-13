@@ -83,7 +83,7 @@ namespace ChamThiSolution.ClientApp.Forms
 
         private void BtnThi_Click(object sender, EventArgs e)
         {
-            frmBaiThi fmr = new frmBaiThi();
+            frmCauHoi fmr = new frmCauHoi(txtPhongThi.Text, primeProxy);
             fmr.ShowDialog();
         }
 

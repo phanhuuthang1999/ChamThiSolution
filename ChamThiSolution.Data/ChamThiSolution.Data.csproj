@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\UICommon.cs" />
+    <Compile Include="DTO\CauHoiDTO.cs" />
     <Compile Include="DTO\PhongThiDTO.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="DTO\ThiSinhDTO.cs" />

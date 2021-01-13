@@ -53,6 +53,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.tablePanel1.SetColumn(this.txtPort, 1);
             this.tablePanel1.SetColumnSpan(this.txtPort, 3);
             this.txtPort.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPort.EnterMoveNextControl = true;
             this.txtPort.Location = new System.Drawing.Point(103, 81);
             this.txtPort.Name = "txtPort";
             this.txtPort.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -67,6 +68,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.tablePanel1.SetColumn(this.txtTen, 1);
             this.tablePanel1.SetColumnSpan(this.txtTen, 3);
             this.txtTen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTen.EnterMoveNextControl = true;
             this.txtTen.Location = new System.Drawing.Point(103, 55);
             this.txtTen.Name = "txtTen";
             this.txtTen.Properties.MaxLength = 255;
@@ -141,6 +143,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.tablePanel1.SetColumn(this.txtMa, 1);
             this.tablePanel1.SetColumnSpan(this.txtMa, 3);
             this.txtMa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMa.EnterMoveNextControl = true;
             this.txtMa.Location = new System.Drawing.Point(103, 29);
             this.txtMa.Name = "txtMa";
             this.txtMa.Properties.MaxLength = 50;
@@ -153,6 +156,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.tablePanel1.SetColumn(this.lookUpEdit1, 1);
             this.tablePanel1.SetColumnSpan(this.lookUpEdit1, 3);
             this.lookUpEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lookUpEdit1.EnterMoveNextControl = true;
             this.lookUpEdit1.Location = new System.Drawing.Point(103, 107);
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {

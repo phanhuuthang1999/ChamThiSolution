@@ -52,10 +52,10 @@ namespace ChamThiSolution.MasterApp.Forms
                     //    Console.Write("\r\n");
 
                     ////write the value to the console
-                    //if (xlRange.Cells[i, j] != null && xlRange.Cells[i, j].Value2 != null)
-                        //string s = xlRange.Cells[i, j].Value2.ToString() + "\t");
-
-                    //add useful things here!   
+                    if (xlRange.Cells[i, j] != null && xlRange.Cells[i, j].Value2 != null)
+                    {
+                        string s = xlRange.Cells[i, j].Value2.ToString();
+                    }
                 }
 }
         }
@@ -74,6 +74,7 @@ namespace ChamThiSolution.MasterApp.Forms
             if (choofdlog.ShowDialog() == DialogResult.OK)
             {
                 btnLink.Text = choofdlog.FileName;
+                ExportDataFromExcel(btnLink.Text);
             }
         }
 
@@ -83,7 +84,7 @@ namespace ChamThiSolution.MasterApp.Forms
 
             if (data > 0)
             {
-                this.DialogResult = DialogResult.OK;
+                DialogResult = DialogResult.OK;
                 Close();
             }
 

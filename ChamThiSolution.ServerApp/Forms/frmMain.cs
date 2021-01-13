@@ -4,6 +4,8 @@ using ChamThiSolution.ServerApp.Proxy;
 using ChamThiSolution.ServerApp.Terminal;
 using DevExpress.XtraBars;
 using System;
+using System.Runtime.Remoting;
+using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using System.Windows.Forms;
 
@@ -29,7 +31,7 @@ namespace ChamThiSolution.Server.Forms
             lblChao.Caption += chao;
             btnPhongThi.ItemClick += BtnPhongThi_ItemClick;
             btnDangXuat.ItemClick += BtnDangXuat_ItemClick;
-
+            FormClosing += FrmMain_FormClosing;
             #endregion
 
         }
@@ -68,6 +70,17 @@ namespace ChamThiSolution.Server.Forms
         #endregion
 
         #region Events
+
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (ChannelServices.GetChannel(tcpChannel.ChannelName) != null)
+            {
+                RemotingServices.Disconnect(this);
+                ChannelServices.UnregisterChannel(tcpChannel);
+            }
+            Application.ExitThread();
+            Application.Exit();
+        }
 
         private void BtnDangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {

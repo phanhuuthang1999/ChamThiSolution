@@ -33,6 +33,7 @@ namespace ChamThiSolution.ClientApp.Forms
             btnOK.Click += btnDangNhap_Click;
             btnCancel.Click += btnThoat_Click;
             btnreload.Click += Btnreload_Click;
+            ckcMK.CheckedChanged += CkcMK_CheckedChanged;
             twoWaysClientTerminal = new TwoWaysClientTerminal();
         }
 
@@ -73,7 +74,6 @@ namespace ChamThiSolution.ClientApp.Forms
         #endregion
 
         #region Private
-
         private void LoadPhongThi()
         {
             PhongThiDTO[] phongThiDTO = primeProxy.GetPhongThiChoThiSinh();
@@ -89,6 +89,15 @@ namespace ChamThiSolution.ClientApp.Forms
         private void Btnreload_Click(object sender, EventArgs e)
         {
             LoadPhongThi();
+        }
+        private void CkcMK_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckcMK.Checked)
+            {
+                txtMK.Properties.UseSystemPasswordChar = true;
+            }
+            else
+                txtMK.Properties.UseSystemPasswordChar = false;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -141,8 +150,6 @@ namespace ChamThiSolution.ClientApp.Forms
                 XtraMessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ", "Đăng nhập thất bại");
                 return;
             }
-
-
 
         }
 

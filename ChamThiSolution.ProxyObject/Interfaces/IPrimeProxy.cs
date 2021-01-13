@@ -1,4 +1,5 @@
-﻿using ChamThiSolution.Data.Entities;
+﻿using ChamThiSolution.Data.DTO;
+using ChamThiSolution.Data.Entities;
 using QuanLyChamThiSolution.Data.DTO;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace ChamThiSolution.ProxyObject.Interfaces
     /// Lấy kết quả trả về cho thí sinh điểm
     /// </summary>
     [Serializable]
-    public delegate void GetDeThi();
+    public delegate List<CauHoi> GetDeThi();
     public delegate void EndExam();
     public delegate void GetPoint(string Answer);
 
@@ -47,12 +48,12 @@ namespace ChamThiSolution.ProxyObject.Interfaces
     public delegate bool GetIdPhongThi(string taikhoan, string matkhau, string idPhongThi);
     public delegate ThiSinhDTO[] GetThiSinhPhongThi(int idPhongthi);
     public delegate bool GetPhongThiMo(int idPhongThi);
-
+    public delegate CauHoiDTO[] GetDeThiChoPhong(string tenPhong);
 
 
     public interface IPrimeProxy
-    { 
-
+    {
+        CauHoiDTO[] GetDeThiChoPhong(string tenPhong);
         PhongThiDTO[] GetPhongThiChoThiSinh();
 
         ThiSinhDTO[] GetThiSinhPhongThi(int idPhongThi);
@@ -73,7 +74,7 @@ namespace ChamThiSolution.ProxyObject.Interfaces
 
         List<PhongThi> GetPhongThi();
 
-        void GetDeThi();
+        List<CauHoi> GetDeThi();
 
         void EnableRoom();
 

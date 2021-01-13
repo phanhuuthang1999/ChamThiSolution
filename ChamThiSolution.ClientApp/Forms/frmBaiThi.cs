@@ -20,11 +20,17 @@ namespace ChamThiSolution.ClientApp.Forms
 
         public static frmMain fMain;
         IPrimeProxy primeProxy = frmLogin.primeProxy;
+        string tenPhong;
+        string cauhoi;
+        string noidung;
 
         #endregion
-        public frmBaiThi()
+        public frmBaiThi(string TenCau, string NoiDung)
         {
             InitializeComponent();
+            txtTenCau.Text = TenCau;
+            txtNoiDung.Text = NoiDung;
+            btnLink.Click += BtnLink_Click;
         }
 
         protected override void OnShown(EventArgs e)
@@ -42,7 +48,6 @@ namespace ChamThiSolution.ClientApp.Forms
             // Register client handler to wrapper event
             clientEventsWrapper.NopBaiReceived += ClientEventsWrapper_NopBaiReceived;
 
-            txtNoiDung.Text = CauHoi.NoiDungCauHoi;
         }
 
         private void ClientEventsWrapper_NopBaiReceived()
@@ -50,10 +55,26 @@ namespace ChamThiSolution.ClientApp.Forms
 
         }
 
+        private void BtnLink_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog choofdlog = new OpenFileDialog();
+            choofdlog.Filter = "All Files (*.*)|*.*";
+            choofdlog.FilterIndex = 1;
+            choofdlog.Multiselect = true;
+
+            if (choofdlog.ShowDialog() == DialogResult.OK)
+            {
+                btnLink.Text = choofdlog.FileName;
+            }
+        }
+
         #region Public
 
         public CauHoi CauHoi { get; set; }
 
         #endregion
+
+        
+       
     }
 }

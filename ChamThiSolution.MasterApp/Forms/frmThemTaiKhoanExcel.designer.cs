@@ -41,7 +41,7 @@ namespace ChamThiSolution.MasterApp.Forms
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(404, 32);
+            this.btnImport.Location = new System.Drawing.Point(387, 7);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(75, 23);
             this.btnImport.TabIndex = 1;
@@ -49,7 +49,7 @@ namespace ChamThiSolution.MasterApp.Forms
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(43, 37);
+            this.labelControl1.Location = new System.Drawing.Point(27, 12);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(54, 13);
             this.labelControl1.TabIndex = 3;
@@ -57,11 +57,11 @@ namespace ChamThiSolution.MasterApp.Forms
             // 
             // btnLink
             // 
-            this.btnLink.Location = new System.Drawing.Point(120, 34);
+            this.btnLink.Location = new System.Drawing.Point(101, 9);
             this.btnLink.Name = "btnLink";
             this.btnLink.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.btnLink.Size = new System.Drawing.Size(265, 20);
+            this.btnLink.Size = new System.Drawing.Size(271, 20);
             this.btnLink.TabIndex = 4;
             // 
             // process1
@@ -81,7 +81,7 @@ namespace ChamThiSolution.MasterApp.Forms
             // 
             // progressBarControl1
             // 
-            this.progressBarControl1.Location = new System.Drawing.Point(43, 104);
+            this.progressBarControl1.Location = new System.Drawing.Point(27, 54);
             this.progressBarControl1.Name = "progressBarControl1";
             this.progressBarControl1.Size = new System.Drawing.Size(436, 18);
             this.progressBarControl1.TabIndex = 5;
@@ -91,7 +91,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.AcceptButton = this.btnImport;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 150);
+            this.ClientSize = new System.Drawing.Size(485, 92);
             this.Controls.Add(this.progressBarControl1);
             this.Controls.Add(this.btnLink);
             this.Controls.Add(this.labelControl1);

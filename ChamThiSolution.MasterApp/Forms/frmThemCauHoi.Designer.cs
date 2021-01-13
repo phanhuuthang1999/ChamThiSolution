@@ -30,13 +30,13 @@ namespace ChamThiSolution.MasterApp.Forms
         private void InitializeComponent()
         {
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.txtMa = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txtMa = new DevExpress.XtraEditors.TextEdit();
             this.txtTen = new DevExpress.XtraEditors.TextEdit();
             this.txtNoiDung = new DevExpress.XtraEditors.TextEdit();
             this.txtHinhAnh = new DevExpress.XtraEditors.TextEdit();
@@ -78,6 +78,28 @@ namespace ChamThiSolution.MasterApp.Forms
             this.tablePanel1.Size = new System.Drawing.Size(377, 169);
             this.tablePanel1.TabIndex = 0;
             // 
+            // txtMa
+            // 
+            this.tablePanel1.SetColumn(this.txtMa, 1);
+            this.tablePanel1.SetColumnSpan(this.txtMa, 3);
+            this.txtMa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMa.EnterMoveNextControl = true;
+            this.txtMa.Location = new System.Drawing.Point(94, 29);
+            this.txtMa.Name = "txtMa";
+            this.tablePanel1.SetRow(this.txtMa, 1);
+            this.txtMa.Size = new System.Drawing.Size(280, 20);
+            this.txtMa.TabIndex = 2;
+            // 
+            // labelControl1
+            // 
+            this.tablePanel1.SetColumn(this.labelControl1, 0);
+            this.labelControl1.Location = new System.Drawing.Point(3, 58);
+            this.labelControl1.Name = "labelControl1";
+            this.tablePanel1.SetRow(this.labelControl1, 2);
+            this.labelControl1.Size = new System.Drawing.Size(55, 13);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = "Tên câu hỏi";
+            // 
             // btnCancel
             // 
             this.tablePanel1.SetColumn(this.btnCancel, 3);
@@ -99,16 +121,6 @@ namespace ChamThiSolution.MasterApp.Forms
             this.btnSave.Size = new System.Drawing.Size(94, 33);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Lưu";
-            // 
-            // labelControl1
-            // 
-            this.tablePanel1.SetColumn(this.labelControl1, 0);
-            this.labelControl1.Location = new System.Drawing.Point(3, 58);
-            this.labelControl1.Name = "labelControl1";
-            this.tablePanel1.SetRow(this.labelControl1, 2);
-            this.labelControl1.Size = new System.Drawing.Size(55, 13);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Tên câu hỏi";
             // 
             // labelControl2
             // 
@@ -140,22 +152,12 @@ namespace ChamThiSolution.MasterApp.Forms
             this.labelControl4.TabIndex = 1;
             this.labelControl4.Text = "Mã câu hỏi";
             // 
-            // txtMa
-            // 
-            this.tablePanel1.SetColumn(this.txtMa, 1);
-            this.tablePanel1.SetColumnSpan(this.txtMa, 3);
-            this.txtMa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMa.Location = new System.Drawing.Point(94, 29);
-            this.txtMa.Name = "txtMa";
-            this.tablePanel1.SetRow(this.txtMa, 1);
-            this.txtMa.Size = new System.Drawing.Size(280, 20);
-            this.txtMa.TabIndex = 2;
-            // 
             // txtTen
             // 
             this.tablePanel1.SetColumn(this.txtTen, 1);
             this.tablePanel1.SetColumnSpan(this.txtTen, 3);
             this.txtTen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTen.EnterMoveNextControl = true;
             this.txtTen.Location = new System.Drawing.Point(94, 55);
             this.txtTen.Name = "txtTen";
             this.tablePanel1.SetRow(this.txtTen, 2);
@@ -167,6 +169,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.tablePanel1.SetColumn(this.txtNoiDung, 1);
             this.tablePanel1.SetColumnSpan(this.txtNoiDung, 3);
             this.txtNoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNoiDung.EnterMoveNextControl = true;
             this.txtNoiDung.Location = new System.Drawing.Point(94, 81);
             this.txtNoiDung.Name = "txtNoiDung";
             this.tablePanel1.SetRow(this.txtNoiDung, 3);
@@ -178,6 +181,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.tablePanel1.SetColumn(this.txtHinhAnh, 1);
             this.tablePanel1.SetColumnSpan(this.txtHinhAnh, 3);
             this.txtHinhAnh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtHinhAnh.EnterMoveNextControl = true;
             this.txtHinhAnh.Location = new System.Drawing.Point(94, 107);
             this.txtHinhAnh.Name = "txtHinhAnh";
             this.tablePanel1.SetRow(this.txtHinhAnh, 4);

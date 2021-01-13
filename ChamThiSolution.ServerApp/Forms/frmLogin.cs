@@ -121,8 +121,6 @@ namespace ChamThiSolution.ServerApp.Forms
 
             GetData();
 
-
-
             if (_bus.GetLogin(txtTK.Text, txtMK.Text))
             {
                 if (_bus.CheckQuyenServer(txtTK.Text))
@@ -155,6 +153,7 @@ namespace ChamThiSolution.ServerApp.Forms
                 }
                
             }
+
             else
             {
                 XtraMessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ", "Đăng nhập thất bại");
