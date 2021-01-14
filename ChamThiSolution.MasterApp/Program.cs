@@ -17,7 +17,7 @@ namespace ChamThiSolution.MasterApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmThemTaiKhoanExcel());
+            Application.Run(new frmLogin());
         }
     }
 }

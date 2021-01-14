@@ -43,9 +43,12 @@ namespace ChamThiSolution.MasterApp.Forms
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
             this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
             this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddTK = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddTKExcel = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.gridPhongThi = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -56,9 +59,6 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ThoiGianBatDau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThoiGianKetThuc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThoiGianLamBai = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnAddTK = new DevExpress.XtraBars.BarButtonItem();
-            this.btnAddTKExcel = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridTaiKhoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
@@ -72,12 +72,14 @@ namespace ChamThiSolution.MasterApp.Forms
             // 
             this.tablePanel1.SetColumn(this.gridTaiKhoan, 1);
             this.gridTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridTaiKhoan.Location = new System.Drawing.Point(753, 3);
+            this.gridTaiKhoan.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.gridTaiKhoan.Location = new System.Drawing.Point(1129, 6);
             this.gridTaiKhoan.MainView = this.gridView;
+            this.gridTaiKhoan.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.gridTaiKhoan.MenuManager = this.ribbonControl;
             this.gridTaiKhoan.Name = "gridTaiKhoan";
             this.tablePanel1.SetRow(this.gridTaiKhoan, 0);
-            this.gridTaiKhoan.Size = new System.Drawing.Size(538, 598);
+            this.gridTaiKhoan.Size = new System.Drawing.Size(806, 896);
             this.gridTaiKhoan.TabIndex = 2;
             this.gridTaiKhoan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -90,6 +92,8 @@ namespace ChamThiSolution.MasterApp.Forms
             this.MatKhau,
             this.IsQuyen,
             this.IsActive});
+            this.gridView.DetailHeight = 647;
+            this.gridView.FixedLineWidth = 3;
             this.gridView.GridControl = this.gridTaiKhoan;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;
@@ -99,33 +103,41 @@ namespace ChamThiSolution.MasterApp.Forms
             // 
             this.TenDangNhap.Caption = "Tên đăng nhập";
             this.TenDangNhap.FieldName = "TenDangNhap";
+            this.TenDangNhap.MinWidth = 30;
             this.TenDangNhap.Name = "TenDangNhap";
             this.TenDangNhap.Visible = true;
             this.TenDangNhap.VisibleIndex = 0;
+            this.TenDangNhap.Width = 112;
             // 
             // MatKhau
             // 
             this.MatKhau.Caption = "Mật khẩu";
             this.MatKhau.FieldName = "MatKhau";
+            this.MatKhau.MinWidth = 30;
             this.MatKhau.Name = "MatKhau";
             this.MatKhau.Visible = true;
             this.MatKhau.VisibleIndex = 1;
+            this.MatKhau.Width = 112;
             // 
             // IsQuyen
             // 
             this.IsQuyen.Caption = "Quyền";
             this.IsQuyen.FieldName = "Quyen";
+            this.IsQuyen.MinWidth = 30;
             this.IsQuyen.Name = "IsQuyen";
             this.IsQuyen.Visible = true;
             this.IsQuyen.VisibleIndex = 2;
+            this.IsQuyen.Width = 112;
             // 
             // IsActive
             // 
             this.IsActive.Caption = "Trạng thái";
             this.IsActive.FieldName = "IsActive";
+            this.IsActive.MinWidth = 30;
             this.IsActive.Name = "IsActive";
             this.IsActive.Visible = true;
             this.IsActive.VisibleIndex = 3;
+            this.IsActive.Width = 112;
             // 
             // ribbonControl
             // 
@@ -142,13 +154,14 @@ namespace ChamThiSolution.MasterApp.Forms
             this.btnAddTK,
             this.btnAddTKExcel});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.ribbonControl.MaxItemId = 22;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1294, 158);
+            this.ribbonControl.Size = new System.Drawing.Size(1940, 193);
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // btnPrint
@@ -193,6 +206,22 @@ namespace ChamThiSolution.MasterApp.Forms
             this.btnRefresh.ImageOptions.ImageUri.Uri = "Refresh";
             this.btnRefresh.Name = "btnRefresh";
             // 
+            // btnAddTK
+            // 
+            this.btnAddTK.Caption = "Thêm tài khoản";
+            this.btnAddTK.Id = 20;
+            this.btnAddTK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTK.ImageOptions.Image")));
+            this.btnAddTK.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAddTK.ImageOptions.LargeImage")));
+            this.btnAddTK.Name = "btnAddTK";
+            // 
+            // btnAddTKExcel
+            // 
+            this.btnAddTKExcel.Caption = "Thêm với Excel";
+            this.btnAddTKExcel.Id = 21;
+            this.btnAddTKExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTKExcel.ImageOptions.Image")));
+            this.btnAddTKExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAddTKExcel.ImageOptions.LargeImage")));
+            this.btnAddTKExcel.Name = "btnAddTKExcel";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -222,6 +251,13 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "In và Xuất ";
             // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnAddTK);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnAddTKExcel);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Tài khoản sinh viên";
+            // 
             // tablePanel1
             // 
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
@@ -230,11 +266,12 @@ namespace ChamThiSolution.MasterApp.Forms
             this.tablePanel1.Controls.Add(this.gridPhongThi);
             this.tablePanel1.Controls.Add(this.gridTaiKhoan);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel1.Location = new System.Drawing.Point(0, 158);
+            this.tablePanel1.Location = new System.Drawing.Point(0, 193);
+            this.tablePanel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(1294, 604);
+            this.tablePanel1.Size = new System.Drawing.Size(1940, 908);
             this.tablePanel1.TabIndex = 4;
             // 
             // gridPhongThi
@@ -242,12 +279,14 @@ namespace ChamThiSolution.MasterApp.Forms
             this.tablePanel1.SetColumn(this.gridPhongThi, 0);
             this.gridPhongThi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gridPhongThi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridPhongThi.Location = new System.Drawing.Point(3, 3);
+            this.gridPhongThi.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.gridPhongThi.Location = new System.Drawing.Point(5, 6);
             this.gridPhongThi.MainView = this.gridView1;
+            this.gridPhongThi.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.gridPhongThi.MenuManager = this.ribbonControl;
             this.gridPhongThi.Name = "gridPhongThi";
             this.tablePanel1.SetRow(this.gridPhongThi, 0);
-            this.gridPhongThi.Size = new System.Drawing.Size(744, 598);
+            this.gridPhongThi.Size = new System.Drawing.Size(1114, 896);
             this.gridPhongThi.TabIndex = 3;
             this.gridPhongThi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -262,6 +301,8 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ThoiGianBatDau,
             this.ThoiGianKetThuc,
             this.ThoiGianLamBai});
+            this.gridView1.DetailHeight = 647;
+            this.gridView1.FixedLineWidth = 3;
             this.gridView1.GridControl = this.gridPhongThi;
             this.gridView1.Name = "gridView1";
             // 
@@ -269,88 +310,82 @@ namespace ChamThiSolution.MasterApp.Forms
             // 
             this.Id.Caption = "Mã Phòng";
             this.Id.FieldName = "Id";
+            this.Id.MinWidth = 30;
             this.Id.Name = "Id";
             this.Id.Visible = true;
             this.Id.VisibleIndex = 0;
+            this.Id.Width = 112;
             // 
             // TenPhongThi
             // 
             this.TenPhongThi.Caption = "Tên Phòng";
             this.TenPhongThi.FieldName = "TenPhongThi";
+            this.TenPhongThi.MinWidth = 30;
             this.TenPhongThi.Name = "TenPhongThi";
             this.TenPhongThi.Visible = true;
             this.TenPhongThi.VisibleIndex = 1;
+            this.TenPhongThi.Width = 112;
             // 
             // Port
             // 
             this.Port.Caption = "Port";
             this.Port.FieldName = "Port";
+            this.Port.MinWidth = 30;
             this.Port.Name = "Port";
             this.Port.Visible = true;
             this.Port.VisibleIndex = 2;
+            this.Port.Width = 112;
             // 
             // Status
             // 
             this.Status.Caption = "Trạng thái";
             this.Status.FieldName = "TrangThai";
+            this.Status.MinWidth = 30;
             this.Status.Name = "Status";
             this.Status.Visible = true;
             this.Status.VisibleIndex = 3;
+            this.Status.Width = 112;
             // 
             // ThoiGianBatDau
             // 
             this.ThoiGianBatDau.Caption = "Thời gian bắt đầu";
             this.ThoiGianBatDau.FieldName = "ThoiGianBatDau";
+            this.ThoiGianBatDau.MinWidth = 30;
             this.ThoiGianBatDau.Name = "ThoiGianBatDau";
             this.ThoiGianBatDau.Visible = true;
             this.ThoiGianBatDau.VisibleIndex = 4;
+            this.ThoiGianBatDau.Width = 112;
             // 
             // ThoiGianKetThuc
             // 
             this.ThoiGianKetThuc.Caption = "Thời gian kết thúc";
             this.ThoiGianKetThuc.FieldName = "ThoiGianKetThuc";
+            this.ThoiGianKetThuc.MinWidth = 30;
             this.ThoiGianKetThuc.Name = "ThoiGianKetThuc";
             this.ThoiGianKetThuc.Visible = true;
             this.ThoiGianKetThuc.VisibleIndex = 5;
+            this.ThoiGianKetThuc.Width = 112;
             // 
             // ThoiGianLamBai
             // 
             this.ThoiGianLamBai.Caption = "Thời gian làm bài";
             this.ThoiGianLamBai.FieldName = "ThoiGianLamBai";
+            this.ThoiGianLamBai.MinWidth = 30;
             this.ThoiGianLamBai.Name = "ThoiGianLamBai";
             this.ThoiGianLamBai.Visible = true;
             this.ThoiGianLamBai.VisibleIndex = 6;
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnAddTK);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnAddTKExcel);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Tài khoản sinh viên";
-            // 
-            // btnAddTK
-            // 
-            this.btnAddTK.Caption = "Thêm tài khoản";
-            this.btnAddTK.Id = 20;
-            this.btnAddTK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTK.ImageOptions.Image")));
-            this.btnAddTK.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAddTK.ImageOptions.LargeImage")));
-            this.btnAddTK.Name = "btnAddTK";
-            // 
-            // btnAddTKExcel
-            // 
-            this.btnAddTKExcel.Caption = "Thêm với Excel";
-            this.btnAddTKExcel.Id = 21;
-            this.btnAddTKExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTKExcel.ImageOptions.Image")));
-            this.btnAddTKExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAddTKExcel.ImageOptions.LargeImage")));
-            this.btnAddTKExcel.Name = "btnAddTKExcel";
+            this.ThoiGianLamBai.Width = 112;
             // 
             // frmPhongThi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Appearance.Options.UseFont = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1294, 762);
+            this.ClientSize = new System.Drawing.Size(1940, 1101);
             this.Controls.Add(this.tablePanel1);
             this.Controls.Add(this.ribbonControl);
+            this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "frmPhongThi";
             this.Ribbon = this.ribbonControl;
             this.Text = "QUẢN LÝ PHÒNG THI";

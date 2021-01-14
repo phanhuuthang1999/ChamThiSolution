@@ -44,6 +44,7 @@ namespace ChamThiSolution.Server.Forms
         {
             base.OnShown(e);
             Enable();
+            btnPhongThi.PerformClick();
         }
 
         #endregion

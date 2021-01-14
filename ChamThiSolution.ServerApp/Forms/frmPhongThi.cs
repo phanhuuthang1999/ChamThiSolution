@@ -39,6 +39,7 @@ namespace ChamThiSolution.ServerApp.Forms
         {
             base.OnShown(e);
             LoadPhongThi();
+            
         }
 
         #endregion

@@ -97,6 +97,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.btnCa2,
             this.btnLop01});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.ribbon.MaxItemId = 21;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -104,7 +105,7 @@ namespace ChamThiSolution.MasterApp.Forms
             this.ribbonPage2,
             this.ribbonPage3,
             this.ribbonPage5});
-            this.ribbon.Size = new System.Drawing.Size(1143, 158);
+            this.ribbon.Size = new System.Drawing.Size(993, 193);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnPhongThi
@@ -268,10 +269,11 @@ namespace ChamThiSolution.MasterApp.Forms
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 684);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 591);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1143, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(993, 30);
             // 
             // imageCollection1
             // 
@@ -350,13 +352,16 @@ namespace ChamThiSolution.MasterApp.Forms
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Appearance.Options.UseFont = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1143, 708);
+            this.ClientSize = new System.Drawing.Size(993, 621);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmMain.IconOptions.Image")));
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "frmMain";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;

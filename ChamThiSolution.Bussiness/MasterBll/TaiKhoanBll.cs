@@ -51,6 +51,23 @@ namespace ChamThiSolution.Bussiness.MasterBll
             return Context.SaveChanges();
         }
 
+        public int ThemTaiKhoan(string pTaiKhoans)
+        {
+            var TaiKhoans = Context.TaiKhoans.FirstOrDefault(p => p.Id.Equals(5));
+            if (TaiKhoans == null)
+            {
+                TaiKhoans = new TaiKhoan();
+            }
+            TaiKhoans.TenDangNhap = pTaiKhoans;
+            TaiKhoans.MatKhau = "123";
+            TaiKhoans.IsActive = true;
+            TaiKhoans.IsQuyen = -1;
+
+            Context.TaiKhoans.Add(TaiKhoans);
+
+            return Context.SaveChanges();
+        }
+
         public int DeleteTaiKhoans(string pTaiKhoans)
         {
             var TaiKhoans = Context.TaiKhoans.FirstOrDefault(p => p.TenDangNhap.Equals(pTaiKhoans));

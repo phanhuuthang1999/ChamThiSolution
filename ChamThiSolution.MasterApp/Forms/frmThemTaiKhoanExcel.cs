@@ -5,6 +5,7 @@ using Application = Microsoft.Office.Interop.Excel.Application;
 using ChamThiSolution.Data.Entities;
 using ChamThiSolution.Bussiness.MasterBll;
 using DevExpress.XtraEditors;
+using System.Collections.Generic;
 
 namespace ChamThiSolution.MasterApp.Forms
 {
@@ -13,6 +14,7 @@ namespace ChamThiSolution.MasterApp.Forms
         #region Variable
 
         private TaiKhoanBll _bus;
+        string item;
 
         #endregion
 
@@ -47,17 +49,13 @@ namespace ChamThiSolution.MasterApp.Forms
             {
                 for (int j = 1; j <= colCount; j++)
                 {
-                    ////new line
-                    //if (j == 1)
-                    //    Console.Write("\r\n");
-
-                    ////write the value to the console
                     if (xlRange.Cells[i, j] != null && xlRange.Cells[i, j].Value2 != null)
                     {
-                        string s = xlRange.Cells[i, j].Value2.ToString();
+                        item = xlRange.Cells[i, j].Value2.ToString();
+                        var data = _bus.ThemTaiKhoan(item);
                     }
                 }
-}
+            }
         }
 
         #endregion
@@ -74,25 +72,25 @@ namespace ChamThiSolution.MasterApp.Forms
             if (choofdlog.ShowDialog() == DialogResult.OK)
             {
                 btnLink.Text = choofdlog.FileName;
-                ExportDataFromExcel(btnLink.Text);
+                
             }
         }
 
         private void BtnImport_Click(object sender, EventArgs e)
         {
-            var data = _bus.SaveTaiKhoan(TaiKhoan);
+            ExportDataFromExcel(btnLink.Text);
 
-            if (data > 0)
-            {
-                DialogResult = DialogResult.OK;
-                Close();
-            }
+            //if (data > 0)
+            //{
+            //    DialogResult = DialogResult.OK;
+            //    Close();
+            //}
 
-            else
-            {
-                XtraMessageBox.Show("Lưu thất bại", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            //else
+            //{
+            //    XtraMessageBox.Show("Lưu thất bại", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return;
+            //}
         }
 
         private void BackgroundWorker1_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)

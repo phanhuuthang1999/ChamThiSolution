@@ -29,7 +29,9 @@ namespace ChamThiSolution.ClientApp.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.txtMSSV = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnThi = new DevExpress.XtraEditors.SimpleButton();
@@ -43,7 +45,6 @@ namespace ChamThiSolution.ClientApp.Forms
             this.txtTen = new DevExpress.XtraEditors.TextEdit();
             this.txtGioiTinh = new DevExpress.XtraEditors.TextEdit();
             this.txtPhongThi = new DevExpress.XtraEditors.TextEdit();
-            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMSSV.Properties)).BeginInit();
@@ -89,6 +90,17 @@ namespace ChamThiSolution.ClientApp.Forms
             this.tablePanel1.Size = new System.Drawing.Size(696, 252);
             this.tablePanel1.TabIndex = 0;
             // 
+            // btnRefresh
+            // 
+            this.tablePanel1.SetColumn(this.btnRefresh, 3);
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRefresh.Location = new System.Drawing.Point(438, 207);
+            this.btnRefresh.Name = "btnRefresh";
+            this.tablePanel1.SetRow(this.btnRefresh, 5);
+            this.btnRefresh.Size = new System.Drawing.Size(81, 42);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Text = "Refresh";
+            // 
             // txtMSSV
             // 
             this.tablePanel1.SetColumn(this.txtMSSV, 2);
@@ -127,10 +139,11 @@ namespace ChamThiSolution.ClientApp.Forms
             // 
             this.tablePanel1.SetColumn(this.pictureEdit1, 0);
             this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureEdit1.Enabled = false;
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(3, 63);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
             this.tablePanel1.SetRow(this.pictureEdit1, 1);
             this.tablePanel1.SetRowSpan(this.pictureEdit1, 4);
             this.pictureEdit1.Size = new System.Drawing.Size(168, 138);
@@ -231,17 +244,6 @@ namespace ChamThiSolution.ClientApp.Forms
             this.tablePanel1.SetRow(this.txtPhongThi, 2);
             this.txtPhongThi.Size = new System.Drawing.Size(168, 20);
             this.txtPhongThi.TabIndex = 4;
-            // 
-            // btnRefresh
-            // 
-            this.tablePanel1.SetColumn(this.btnRefresh, 3);
-            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRefresh.Location = new System.Drawing.Point(438, 207);
-            this.btnRefresh.Name = "btnRefresh";
-            this.tablePanel1.SetRow(this.btnRefresh, 5);
-            this.btnRefresh.Size = new System.Drawing.Size(81, 42);
-            this.btnRefresh.TabIndex = 5;
-            this.btnRefresh.Text = "Refresh";
             // 
             // frmMain
             // 
